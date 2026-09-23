@@ -17,7 +17,7 @@ Sanctuary managers and other non-technical staff. The tool should be simple to u
 
 - **Platform:** Esri, built on the NOAA geoportal, with custom visuals layered on top (Experience Builder-style)
 - **Landing page:** Sanctuary dropdown plus an interactive map that zooms to the selected sanctuary
-- **Spatial framework:** H3 is being considered as a common grid for overlaying datasets
+- **Spatial framework:** 
 - **Boundaries:** Actual sanctuary boundaries and shapefiles
 
 ## Key Data Inputs
