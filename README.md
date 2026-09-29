@@ -18,12 +18,12 @@ Sanctuary managers and other non-technical staff. The tool should be simple to u
 - **Platform:** Esri, built on the NOAA geoportal, with custom visuals layered on top (Experience Builder-style)
 - **Landing page:** Sanctuary dropdown plus an interactive map that zooms to the selected sanctuary
 - **Spatial framework:** 
-- **Boundaries:** Actual sanctuary boundaries and shapefiles
+- **Boundaries:** Actual sanctuary boundaries and shapefiles (via hosted https://www.fisheries.noaa.gov/inport/item/40112)
 
 ## Key Data Inputs
 
-- Benthic data
-- Marine-related data
+- Benthic data (no habitat yet)
+- Marine-related data 
 - Offshore climate data
 
 ## Open Decisions
