@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sanctuary data explorer — simple</title>
-<!-- Sanctuary Watch site icon, embedded for a portable single-file export.
-     Source: https://sanctuarywatch.ioos.us/wp-content/uploads/2025/09/cropped-new_nms_logo-32x32.png -->
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABqlBMVEXJ09wSUof9/f38/P32+frt8vXx9Pf8/P39/f37/Py6zNuHp8KnvtHV3+jV3+iEpcD1+Pr8/P2LqcMESIABRn8BR3/f6u8ARn/o8PTH1uIHS4KeuM3h7PHH1uLq8vXw9ffc7/Lt8/b9/f39/f36/PzQ6O2DxtSx2+O73+bW6/D6+/yc0dz9/f1gi65BdJ48cZ1Ugqh8nrs1a5kJTIMARn8DSIAgXI5rk7MpY5MBR38VVYlkjrA5bppMfKQQUYYlYJCKqcMcWozU4urg6O9DdqCius/0+fq3ytpahqswaJb9/f2kvNBEd6FwlrbE0+CUscjT3+jp7vO+z93b5Ozy9fjf5+5xl7fS3eexxdbr9PYOUIXD1+JRgKe/0N7C4um0yNhdiKx3m7qs2eLM5eutwtTV6/Co1+Ca0dy10t7a7fF5wdDX6e4jX5C13eVZtMYYl7AAjakknLRsvMxTscQLkaw9qL2Tztk5pbtyv8653eWGyNWh093U6u7i8fQpnrZlucouoLdKrcEGj6sSlK6LydY0o7pHq8BBqb5Or8O63+dgt8grn7calq////8wxrYQAAAALXRSTlMCCjNnjK+jdkMX6P7y09L9kSb7J1JJxWq15Rj7/tyrpc70YMKo1f7x6dNy9nAqLSbpAAAAAWJLR0SNGwzi1QAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+kJFhcbOB2gTCkAAAKWSURBVDjLbZPpX9pAEIaHhBQCWsQDpd5VqbZVUDaSgIKARl0UtNAj1qLFKsV6LAGkWkURqK36R/dDDEbr82WPd/a3M7P7AtTRUbSeYZhnBiMLT8DSjMk8OuZ0usYbGvXUY1lHP7dMuJECN+kxNVkf6NZnzbyANHg9jUYAaGltAwAAyuZzo4cIUyYaoK21HQDAapv2cw9kzucUAiYaWtrbAIDtGOVmxv3agGAoPIt4uxFe6ACAtnDcnDi/EHALCCHEub2LZhFHOLRkYwEAKFMQoWWMxXA0Elvm+c7oyirG+J0bcRYDAIB+FCHEd2GFeORuEhMQCjSyANZuL0KIs9zt44QyhCcQQoKZBqDNSuFzItbw3iUghNBYD0DvtJK4/8PKvf5xTGmbt5uFPl5tTdD3SVJ0aVrtR4MR+qfuy3c7IyLGGEfX1J1mI2CL9hHWOjHGOD6prj0GkD4HtD1cFzEWv0y4g5NBv4CQxwD9yZj2oWbFxMbm0tf5eDgetfCC5SUMpLaWNRGubwuuuVUsbu+k0zvfNxuMMJjZ/RHbU/MQeN9GAov7B4eEEJKVB1igpfTBVmhmfTEY3HNuxlZEjJO5PFEo9ABYh/aPij+PM12hUCi0lUngzO4hUXHQAKB3pJNyoZA7kE9+nYpnRyVCSL4oH6VPcsUhFgAoe/Y8eZY5zUiilHRcEELy5ZQknkmi2EUDAADtuKwUzqtVOVfLE0Iuf6e2U/JV6eLP3wHFIGzHdf1SUimnj3dvLgkhpGQ3qp++L0cIyd9ma2W5elKuKKHZV3TdFpTtPE/yt6VaMasWSGrDtNY4vdUboqUijxgfWW/EUaufzl4P663/mfc1Y3dcXxUKOfnNSBP1lL911NtBhmEY/QP7/wNKy91aQE5KhAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNS0wOS0yMlQyMzoyNzo1NiswMDowMAfuiM4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjUtMDktMjJUMjM6Mjc6NTYrMDA6MDB2szByAAAAAElFTkSuQmCC">
+<title>Sanctuary data explorer — ArcGIS Maps SDK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+<!-- ArcGIS Maps SDK for JavaScript 5.1 (core API, map components, Calcite): one CDN entry point.
+     To self-host, download the SDK from developers.arcgis.com (Downloads and previous versions)
+     and point this src at your copy of its index.js. -->
+<script type="module" src="https://js.arcgis.com/5.1/"></script>
 <style>
   :root {
     --ink: #0E2A3B;
@@ -50,17 +50,7 @@
   }
   .panel-inner { padding: 28px 28px 20px; flex: 1; }
   .agency { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-soft); margin: 0 0 22px; }
-  /* Official marks, served from sanctuaries.noaa.gov. Both are circular, so
-     they line up on a shared baseline with a hairline between them. */
-  .lockup { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
-  .lockup img { display: block; height: 34px; width: auto; }
-  .lockup .divider { width: 1px; height: 26px; background: var(--rule); flex-shrink: 0; }
   .agency .agency-name { line-height: 1.35; }
-  .r-logos { display: flex; align-items: center; gap: 11px; margin: 0 0 18px; }
-  .r-logos img { display: block; height: 42px; width: auto; }
-  .r-logos .divider { width: 1px; height: 32px; background: var(--rule); }
-  .r-logos .wordmark { font-size: 13px; line-height: 1.35; color: var(--ink-soft); }
-  .r-logos .wordmark strong { display: block; font-weight: 600; color: var(--ink); }
   h1 { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -0.01em; }
   .intro { margin: 0 0 24px; color: var(--ink-soft); max-width: 34ch; }
 
@@ -154,8 +144,6 @@
   .lp-body input { margin-top: 3px; accent-color: var(--depth); flex-shrink: 0; }
   .lp-body small { display: block; color: var(--ink-soft); font-size: 11px; line-height: 1.4; margin-top: 1px; }
   .lp-body small.is-error { color: var(--magenta); }
-  .lp-body small.lp-src a { color: var(--depth); text-decoration: underline; }
-  .lp-body small.lp-src a:hover { color: var(--ink); }
 
   .actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn { font: inherit; font-weight: 600; font-size: 14px; border-radius: 4px; padding: 10px 16px; cursor: pointer; }
@@ -171,7 +159,7 @@
 
   /* ---------- Map ---------- */
   .map-wrap { position: relative; flex: 1; min-width: 0; }
-  #map { position: absolute; inset: 0; background: #071828; }
+  #map { position: absolute; inset: 0; display: block; background: #071828; }
   #map.no-tiles { background: radial-gradient(ellipse at 50% 45%, #173D58 0%, #0B2338 55%, #040D19 100%); }
   .tile-note {
     position: absolute; left: 60px; top: 12px; z-index: 500; background: var(--white);
@@ -203,29 +191,22 @@
   }
   .legend span { display: flex; align-items: center; gap: 8px; }
 
-  /* Boundaries are drawn by the GPU, so hover and selection are expressed in
-     the layer paint properties (see addBoundaryLayers), not in CSS. */
+  /* Boundaries and markers are graphics in the scene; hover and selection swap
+     their symbols (see BD and MARK), so there is no CSS for them. */
   #map canvas:focus { outline: none; }
-
-  .sanc-mark { background: none; border: 0; }
-  .sanc-mark span {
-    display: block; width: 18px; height: 18px; border-radius: 50%;
-    background: var(--white); border: 3px solid var(--magenta); box-shadow: 0 0 0 1.5px var(--white);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .sanc-mark span::after { content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--magenta); margin: 4px auto 0; }
-  .sanc-mark:hover span, .sanc-mark:focus span { transform: scale(1.2); box-shadow: 0 0 0 1.5px var(--white), 0 0 10px 3px rgba(209,45,142,0.7); }
-  .sanc-mark.is-active span { background: var(--magenta); transform: scale(1.35); }
-  .sanc-mark.is-active span::after { background: var(--white); }
-  #map.zoomed-in .sanc-mark { display: none; }
-  .maplibregl-popup.sanc-tip .maplibregl-popup-content {
+  #map.is-pointing, #map.is-pointing * { cursor: pointer !important; }
+  .map-tip {
+    position: absolute; left: 0; top: 0; z-index: 600; pointer-events: none; white-space: nowrap;
     font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--ink);
-    padding: 5px 9px; border-radius: 3px; box-shadow: 0 1px 3px rgba(14,42,59,0.25);
+    background: var(--white); padding: 5px 9px; border-radius: 3px; box-shadow: 0 1px 3px rgba(14,42,59,0.25);
   }
-  .maplibregl-popup.sanc-tip .maplibregl-popup-tip { display: none; }
-  .maplibregl-ctrl-group button:focus-visible { outline: 3px solid var(--magenta); }
-  /* The globe leaves the corners of the canvas empty; match the app chrome. */
-  #map .maplibregl-canvas-container { cursor: grab; }
+  .map-ctrl-group { display: flex; flex-direction: column; }
+  .map-ctrl-btn {
+    width: 32px; height: 32px; display: grid; place-items: center; padding: 0; cursor: pointer;
+    background: var(--white); color: var(--ink); border: 0; border-radius: 4px; box-shadow: 0 1px 4px rgba(14,42,59,0.25);
+  }
+  .map-ctrl-btn:hover { color: var(--magenta); }
+  .map-ctrl-btn:focus-visible { outline: 3px solid var(--magenta); }
 
   /* ---------- Report ---------- */
   /* Split view: sidebar steps aside, map stays live on the left, report on the right */
@@ -246,6 +227,14 @@
   .link-btn:disabled { color: var(--ink-soft); text-decoration: none; cursor: default; }
   .report-bar .right { display: flex; gap: 10px; }
   .report-doc { max-width: 780px; padding: 30px 32px 72px; }
+  .coming-soon { max-width: 620px; margin: 56px auto 0; padding: 34px; background: var(--white);
+    border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 8px 28px rgba(14,42,59,0.08); }
+  .coming-soon .eyebrow { margin: 0 0 8px; font-size: 12px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--depth); }
+  .coming-soon h2 { margin: 0 0 12px; font: 700 30px/1.2 var(--serif); }
+  .coming-soon p { margin: 0; color: var(--ink-soft); font-size: 16px; line-height: 1.7; max-width: 52ch; }
+  .coming-soon .site-note { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--rule);
+    font-size: 13px; color: var(--ink-soft); }
   .r-kicker { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; }
   .r-title { font-family: var(--serif); font-size: 32px; line-height: 1.2; font-weight: 700; margin: 0 0 12px; letter-spacing: -0.01em; }
   .r-meta { font-size: 13px; color: var(--ink-soft); margin: 0 0 28px; }
@@ -359,7 +348,7 @@
     .lp-head { min-height: 44px; }
     .lp-body { max-height: calc(100dvh - 245px); }
     .lp-body label { min-height: 44px; padding: 8px 0; }
-    .maplibregl-ctrl-group button { width: 44px; height: 44px; }
+    .map-ctrl-btn { width: 44px; height: 44px; }
     .tile-note { left: 12px; right: 12px; top: auto; bottom: 95px; max-width: none; }
     .climate-key { position: absolute; z-index: 500; left: 12px; bottom: 92px; width: 300px; max-width: calc(100% - 24px);
     background: rgba(255,255,255,.96); color: var(--ink); border-radius: 6px; padding: 10px 12px; box-shadow: 0 1px 4px #0e2a3b33; }
@@ -380,7 +369,6 @@
   .climate-nodata { display:inline-block; width:12px; height:10px; border:1px solid #adb8bf; margin-right:4px; background:repeating-conic-gradient(#ddd 0% 25%,white 0% 50%) 0/6px 6px; vertical-align:middle; }
   @media (max-height: 560px) { .climate-key { bottom:32px; left:64px; width:270px; max-width:calc(100% - 76px); max-height:calc(100% - 50px); padding:8px 10px; } }
   .legend { right: 10px; bottom: 32px; font-size: 11px; }
-    .sanc-mark { width: 40px; height: 40px; display: grid; place-items: center; }
     .report-bar { padding: 8px 12px; }
     .report-bar .btn { min-height: 44px; padding: 9px 12px; }
     .report-doc { padding: 24px 18px 56px; }
@@ -390,7 +378,6 @@
     .sources td:last-child { width: 28%; }
     .sources.proj .bars, .sources.proj .bars-h { display: none; }
     .sources.proj td:last-child { width: auto; }
-    .r-logos .wordmark { font-size: 11px; }
     .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .figures div:nth-child(3) { padding-left: 0; border-left: 0; }
     .figures dd { font-size: 20px; }
@@ -399,7 +386,6 @@
     dialog { padding: 18px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .sanc-mark span { transition: none; }
   }
 
   /* One template, two outputs: printing the report gives the PDF */
@@ -407,7 +393,6 @@
     html, body { display: block !important; height: auto !important; min-height: 0 !important; max-height: none !important; overflow: visible !important; }
     body { display: block; height: auto; background: #fff; }
     .panel, .map-wrap, .report-bar, .link-btn, .mobile-bar, .mobile-nav, dialog { display: none !important; }
-    .r-logos { break-after: avoid-page; }
     body .report { display: block; position: static; overflow: visible; background: #fff; width: auto; height: auto; border: 0; box-shadow: none; }
     .report[hidden] { display: none !important; }
     .report-doc { max-width: none; padding: 0; }
@@ -431,14 +416,6 @@
 <aside class="panel" aria-label="Sanctuary selection">
   <div class="panel-inner">
     <p class="agency">
-      <span class="lockup">
-        <img src="https://sanctuaries.noaa.gov/media/img/logos/noaa-logo.png"
-             alt="National Oceanic and Atmospheric Administration logo"
-             onerror="this.closest('.lockup').hidden=true">
-        <span class="divider" aria-hidden="true"></span>
-        <img src="https://sanctuaries.noaa.gov/media/img/logos/onms-logo-no-text-74.png"
-             alt="National Marine Sanctuaries logo">
-      </span>
       <span class="agency-name">NOAA Office of<br>National Marine Sanctuaries</span>
     </p>
     <h1>Sanctuary data explorer</h1>
@@ -473,12 +450,21 @@
   <div class="panel-foot">
     <p id="data-status" role="status">Loading boundaries from the ONMS map service…</p>
     <p id="cefi-status" hidden></p>
-    <p>Globe view · MapLibre GL. Boundaries are not for legal use or navigation.</p>
+    <p>Globe view · ArcGIS Maps SDK for JavaScript. Boundaries are not for legal use or navigation.</p>
   </div>
 </aside>
 
 <main class="map-wrap">
-  <div id="map" aria-label="Map of national marine sanctuaries"></div>
+  <arcgis-scene id="map" viewing-mode="global" popup-disabled aria-label="Map of national marine sanctuaries">
+    <arcgis-zoom slot="top-left"></arcgis-zoom>
+    <div slot="top-left" class="map-ctrl-group">
+      <button type="button" id="map-reset" class="map-ctrl-btn" title="Reset view" aria-label="Reset map view">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3 3 10.5V21h6.2v-6h5.6v6H21V10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div slot="top-right" id="layer-panel-host"></div>
+  </arcgis-scene>
+  <div class="map-tip" id="map-tip" role="presentation" hidden></div>
   <div class="tile-note" id="tile-note" hidden>The ocean basemap couldn't load in this preview. Open the file in a browser to see it.</div>
   <div id="climate-map-key" class="climate-key" hidden>
     <div class="climate-scale-heading"><strong id="climate-map-title"></strong><small id="climate-map-units"></small></div>
@@ -506,10 +492,10 @@
   <div class="report-bar">
     <button class="btn btn-quiet" id="report-back">Close report</button>
     <label class="sr-only" for="report-site">Sanctuary</label>
-    <select id="report-site" class="report-site"></select>
+    <select id="report-site" class="report-site" hidden></select>
     <div class="right">
-      <button class="btn btn-quiet" id="report-expand">Full width</button>
-      <button class="btn btn-primary" id="report-print">Download PDF</button>
+      <button class="btn btn-quiet" id="report-expand" hidden>Full width</button>
+      <button class="btn btn-primary" id="report-print" hidden>Download PDF</button>
     </div>
   </div>
   <article class="report-doc" id="report-doc"></article>
@@ -541,8 +527,7 @@
     <label class="btn btn-quiet file-btn">Import connections<input type="file" id="import-connections" class="sr-only" accept=".json,application/json"></label></div>
   <p class="chart-note" style="margin-top:14px">Connections are saved in this browser. Export them to reuse on another device. Use public URLs without passwords or access tokens. Hosted map layers are not automatically summarized in reports.</p>
 </dialog>
-<script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-<script>
+<script type="module">
 // ===========================================================================
 // Data connections (see the data connection SOP for how each is added)
 // ===========================================================================
@@ -562,10 +547,6 @@ const ENABLED_LAYER_IDS = new Set([
   "dhw",          // Accumulated coral heat stress
   "ais",          // Vessel traffic
 ]);
-// First release: the report shows only its header and an "under development"
-// notice. Every calculation is still in the file; set this to false to turn the
-// full report (and the data requests behind it) back on.
-const REPORT_PREVIEW_MODE = true;
 const ENABLED_REPORT_SECTIONS = new Set([
   "overview",     // Summary narrative and headline figures
   "seafloor",     // Ocean depth and mapping
@@ -619,18 +600,6 @@ const HUMAN_USE_LAYERS = [
 const GAP_SERVICE = "https://gis.ngdc.noaa.gov/arcgis/rest/services/bathy_gap_analysis/MapServer";
 const GAP_VINTAGE = "January 2026";
 const MAX_EXPORT_PX = 1600;
-
-// Multibeam survey coverage: NOAA NCEI global multibeam mosaic (~90 m cells).
-// Same approach as the gap analysis: export the shaded-relief image over the
-// sanctuary and count pixels that have data (alpha > 127) inside the boundary.
-// Keep the function name in step with the service's rasterFunctionInfos; NCEI
-// has renamed it before.
-const MULTIBEAM_SERVICE = "https://gis.ngdc.noaa.gov/arcgis/rest/services/multibeam_mosaic/ImageServer";
-const MULTIBEAM_FUNCTION = "ColorHillshadeHaxby_8000-0";
-
-// Where each map layer's data comes from, shown as links in the Map layers panel.
-const NCEI_BATHY_VIEWER = { label: "NCEI Bathymetric Data Viewer", url: "https://www.ncei.noaa.gov/maps/bathymetry/" };
-const CRW_5KM = { label: "NOAA Coral Reef Watch 5 km products", url: "https://coralreefwatch.noaa.gov/product/5km/" };
 
 // Climate: NOAA CEFI regional ocean model summaries, precomputed by
 // cefi_sanctuary_pipeline.py (a type D connection). In production this is a
@@ -718,7 +687,6 @@ const REPORT_THEMES = {
       data: [
         { name: "Depth distribution", src: "NOAA NCEI global DEM mosaic (ArcGIS image service)", status: "included", timeframe: "now" },
         { name: "Seafloor mapping coverage", src: `U.S. Bathymetry Gap Analysis, NOAA, 100 m grid (${GAP_VINTAGE})`, status: "included", timeframe: "now" },
-        { name: "Multibeam survey coverage", src: "NOAA NCEI global multibeam bathymetry mosaic (ArcGIS image service)", status: "included", timeframe: "now" },
         { name: "Benthic habitat composition", src: "NCCOS and partner habitat maps, crosswalked to CMECS classes (precomputed)", status: "planned", timeframe: "now" },
         { name: "Deep-sea coral and sponge records", src: "NOAA Deep-Sea Coral Research and Technology Program", status: "planned", timeframe: "now" },
         { name: "Mapping progress since 2017", src: "Archived U.S. Bathymetry Gap Analysis releases (precomputed)", status: "planned", timeframe: "trend" }
@@ -905,16 +873,15 @@ const postForm = (url, params, ms) => fetchJSON(url, ms, {
 });
 
 // ===========================================================================
-// Map (MapLibre GL JS v5, globe projection)
+// Map (ArcGIS Maps SDK for JavaScript 5.1: <arcgis-scene>, global viewing mode)
 // ===========================================================================
-// The globe projection renders a sphere when zoomed out and eases into web
-// mercator as you zoom in, so a sanctuary still sits on a flat, familiar map
-// at working scales. Everything below is WebGL: there are no SVG paths, so
-// boundary hover/selection is done with feature-state and a blurred casing
-// line rather than the old CSS filter.
+// A SceneView in global mode shows a sphere when zoomed out and a familiar flat map
+// at working scales, like the earlier MapLibre build. Basemaps are cached Esri tile
+// layers, NOAA's dynamic services are map-image and imagery layers, boundaries and
+// markers are graphics layers, and Coral Reef Watch is a custom tile layer.
 
 // Minimal stand-in for L.LatLngBounds so the rest of the tool is unchanged.
-// Internally everything is [lng, lat], MapLibre's order.
+// Internally everything is [lng, lat], GeoJSON's order.
 class Bounds {
   constructor(sw, ne) { this.sw = sw ? sw.slice() : null; this.ne = ne ? ne.slice() : null; }
   static fromBbox(b) { return new Bounds([b[1], b[0]], [b[3], b[2]]); }  // [s,w,n,e]
@@ -1075,7 +1042,7 @@ function updateClimateLegend() {
   if (!active) return;
   const def = CLIMATE_SURFACES[active.id], h = climateMapHealth.get(active.id);
   document.getElementById("climate-map-title").textContent = def.label;
-  document.getElementById("climate-map-status").textContent = h?.loaded ? `${h.date.slice(0,10)} UTC · 5 km ocean analysis${h.errors ? " · some tiles failed" : ""}` : h?.errors ? "Climate images could not load. Toggle the layer to retry." : "Loading NOAA climate images…";
+  document.getElementById("climate-map-status").textContent = h?.loaded ? `${h.date.slice(0,10)} UTC · NOAA Coral Reef Watch / PacIOOS · 5 km ocean analysis${h.errors ? " · some tiles failed" : ""}` : h?.errors ? "Climate images could not load. Toggle the layer to retry." : "Loading NOAA climate images…";
 
   const note = document.getElementById("note-" + active.id);
   if (note) { note.textContent = h?.errors ? h.error : active.note; note.classList.toggle("is-error", !!h?.errors); }
@@ -1120,171 +1087,224 @@ function renderClimateScale(id) {
   });
 }
 
-// GLOBE_PROTOCOL_START
-// Custom raster protocol for the globe. MapLibre v5 expects PNG bytes in {data}.
-maplibregl.addProtocol("crw", async (params, controller) => {
-  const match = params.url.match(/^crw:\/\/(CRW_[A-Z]+)\/(\d+)\/(-?\d+)\/(\d+)$/);
-  if (!match) throw new Error("Invalid climate tile URL.");
-  const canvas = await climateTileCanvas(match[1], +match[2], +match[3], +match[4], controller.signal);
-  const blob = await new Promise((resolve, reject) => canvas.toBlob(b => b ? resolve(b) : reject(new Error("Could not encode climate tile.")), "image/png"));
-  return { data: await blob.arrayBuffer(), cacheControl: "max-age=1800" };
-});
-// GLOBE_PROTOCOL_END
+// ---- ArcGIS Maps SDK for JavaScript modules ---------------------------------
+// $arcgis.import() is the SDK's loader for the CDN build (the single script tag in
+// <head>). If the SDK is served from your own server, the same call works.
+let EsriMap, Camera, Point, Polygon, Graphic, GraphicsLayer, TileLayer, MapImageLayer, ImageryLayer,
+    BaseTileLayer, TileInfo, FeatureLayer, GeoJSONLayer, WebTileLayer, reactiveUtils;
+try {
+  [EsriMap, Camera, Point, Polygon, Graphic, GraphicsLayer, TileLayer, MapImageLayer, ImageryLayer,
+   BaseTileLayer, TileInfo, FeatureLayer, GeoJSONLayer, WebTileLayer, reactiveUtils] = await $arcgis.import([
+    "@arcgis/core/Map.js", "@arcgis/core/Camera.js", "@arcgis/core/geometry/Point.js",
+    "@arcgis/core/geometry/Polygon.js", "@arcgis/core/Graphic.js", "@arcgis/core/layers/GraphicsLayer.js",
+    "@arcgis/core/layers/TileLayer.js", "@arcgis/core/layers/MapImageLayer.js", "@arcgis/core/layers/ImageryLayer.js",
+    "@arcgis/core/layers/BaseTileLayer.js", "@arcgis/core/layers/support/TileInfo.js",
+    "@arcgis/core/layers/FeatureLayer.js", "@arcgis/core/layers/GeoJSONLayer.js",
+    "@arcgis/core/layers/WebTileLayer.js", "@arcgis/core/core/reactiveUtils.js"
+  ]);
+} catch (err) {
+  const n = document.getElementById("tile-note");
+  n.textContent = "The ArcGIS Maps SDK could not be loaded. Check the network connection or the SDK script address in the page head.";
+  n.hidden = false;
+  throw err;
+}
+const WGS84 = { wkid: 4326 };
+const normLon = lon => ((lon + 540) % 360) - 180;   // shifted (< -180) longitudes back to [-180, 180]
 
-const map = new maplibregl.Map({
-  container: "map",
-  style: { version: 8, sources: {}, layers: [], glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf" },
-  center: [-123, 22], zoom: 1.6, minZoom: 0.8, maxZoom: 18,
-  attributionControl: { compact: true },
-  canvasContextAttributes: { antialias: true }
+// ---- Coral Reef Watch as a custom tile layer ---------------------------------
+// The WMS reprojection and request queue above are unchanged; the SDK simply asks
+// this layer for (level, row, col) tiles instead of MapLibre's crw:// protocol.
+// Levels stop at 8 (the old source maxzoom) and the view over-zooms beyond that.
+const CRW_MAX_LEVEL = 8;
+const CrwTileLayer = BaseTileLayer.createSubclass({
+  properties: { variable: null },
+  constructor() { this.tileInfo = TileInfo.create({ numLODs: CRW_MAX_LEVEL + 1 }); },
+  fetchTile(level, row, col, options) {
+    const signal = (options && options.signal) || new AbortController().signal;
+    return climateTileCanvas(this.variable, level, col, row, signal);
+  }
 });
-map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), "top-left");
-map.dragRotate.disable();
-map.touchZoomRotate.disableRotation();
+// BaseTileLayer has no copyright property; the credit is carried by the climate legend box.
+const crwLayer = variable => new CrwTileLayer({ variable });
 
-// ---- Raster source builders -----------------------------------------------
-// Cached XYZ tiles (Esri) go in directly. Dynamic ArcGIS services are drawn
-// per tile via the {bbox-epsg-3857} token, which MapLibre substitutes with the
-// tile's mercator extent: the GL equivalent of the old EsriExportLayer.
+// ---- Layer builders ----------------------------------------------------------
+// Cached Esri tile services are TileLayers. Dynamic ArcGIS services need no export
+// arithmetic: MapImageLayer and ImageryLayer request what the view needs. The tile
+// URL template is kept alongside so the report's overview map (drawn on a canvas,
+// independent of the live map) can still fetch its own tiles.
 const esriXYZ = (path, opts) => Object.assign({
   type: "raster", tileSize: 256, maxzoom: 13,
+  url: `https://server.arcgisonline.com/ArcGIS/rest/services/${path}/MapServer`,
   tiles: [`https://server.arcgisonline.com/ArcGIS/rest/services/${path}/MapServer/tile/{z}/{y}/{x}`]
 }, opts || {});
 
-// Dynamic ArcGIS services render each tile on demand, so a globe view that
-// exposes a whole hemisphere at once can fan out into dozens of simultaneous
-// export requests and get throttled. MIN_DYNAMIC_ZOOM is the floor the Leaflet
-// build had by accident (map minZoom was 2); keep it explicit here.
-const MIN_DYNAMIC_ZOOM = 2;
-// ---- CORS proxy ------------------------------------------------------------
-// Paste the deployed Worker origin here, no trailing slash, e.g.
-//   const CORS_PROXY = "https://noaa-proxy.yourname.workers.dev";
-// Leave it "" and nothing changes: viaProxy() becomes a no-op and every layer
-// behaves exactly as it does today. Only layers marked proxy:true use it.
-const CORS_PROXY = "";
-const viaProxy = u =>
-  CORS_PROXY ? CORS_PROXY.replace(/\/$/, "") + "/" + u.replace(/^https?:\/\//, "") : u;
-
-function esriExport(url, o) {
+const mapImage = (url, o) => new MapImageLayer({ url, copyright: (o || {}).attribution });
+// A named server-side raster function (hillshade, etc.) applied to an ImageServer.
+// minScale is the most zoomed-out scale at which the layer draws; Esri level L is
+// 591657527.59 / 2^L, and MapLibre zoom z corresponds to Esri level z + 1.
+const imageryLayer = (url, rasterFunction, o) => {
   o = o || {};
-  const size = o.tileSize || 512;
-  const common = `bbox={bbox-epsg-3857}&bboxSR=3857&imageSR=3857&size=${size},${size}&f=image`;
-  const tile = o.kind === "image"
-    ? `${url}/exportImage?${common}&format=${o.format || "png32"}` +
-      (o.rasterFunction ? `&renderingRule=${encodeURIComponent(JSON.stringify({ rasterFunction: o.rasterFunction }))}` : "")
-    : `${url}/export?${common}&format=${o.format || "png32"}&transparent=true&dpi=96` +
-      (o.layersParam ? "&layers=" + o.layersParam : "");
-  return { type: "raster", tileSize: size, tiles: [o.proxy ? viaProxy(tile) : tile],
-           attribution: o.attribution,
-           minzoom: o.minzoom != null ? o.minzoom : MIN_DYNAMIC_ZOOM };
-}
-
-// Both renderers consume the same reprojected climate tiles.
-const crwWms = variable => ({
-  type: "raster", tileSize: 256, maxzoom: 8,
-  tiles: [`crw://${variable}/{z}/{x}/{y}`],
-  attribution: "Ocean conditions: NOAA Coral Reef Watch / PacIOOS"
-});
+  return new ImageryLayer({
+    url, format: o.format || "png", copyright: o.attribution, minScale: o.minScale || 0,
+    rasterFunction: { functionName: rasterFunction }
+  });
+};
+const scaleAtLevel = level => 591657527.59 / 2 ** level;
 
 // ---- Basemaps --------------------------------------------------------------
-const CHARTS = "https://gis.charttools.noaa.gov/arcgis/rest/services/MCS";
 const ESRI_ATTR = "Basemap: Esri, GEBCO, NOAA, and contributors. Boundaries: NOAA ONMS";
+// Simple edition: two basemaps. (The NOAA chart, ECDIS and NCEI relief basemaps from
+// the MapLibre build were dormant; MapImageLayer / ImageryLayer can restore them.)
 const BASEMAPS = [
   { id: "ocean", label: "Ocean", note: "Esri ocean basemap with bathymetry shading",
     parts: [["base", esriXYZ("Ocean/World_Ocean_Base", { attribution: ESRI_ATTR })],
             ["ref",  esriXYZ("Ocean/World_Ocean_Reference")]] },
-  { id: "chart", label: "NOAA nautical chart", note: "NOAA ENC data in paper-chart symbology, updated weekly. Not for navigation.",
-    parts: [["base", esriXYZ("Ocean/World_Ocean_Base", { attribution: ESRI_ATTR })],
-            ["ref", esriExport(`${CHARTS}/NOAAChartDisplay/MapServer/exts/MaritimeChartService/MapServer`,
-              { format: "png", attribution: "Charts: NOAA Office of Coast Survey" })]] },
-  { id: "ecdis", label: "NOAA ECDIS chart", note: "NOAA ENC data in the IHO symbology used on ship displays. Not for navigation.",
-    parts: [["base", esriXYZ("Ocean/World_Ocean_Base", { attribution: ESRI_ATTR })],
-            ["ref", esriExport(`${CHARTS}/ENCOnline/MapServer/exts/MaritimeChartService/MapServer`,
-              { format: "png", attribution: "Charts: NOAA Office of Coast Survey" })]] },
-  { id: "relief", label: "NCEI shaded relief", note: "NOAA NCEI global bathymetry and topography mosaic",
-    parts: [["base", esriExport("https://gis.ngdc.noaa.gov/arcgis/rest/services/DEM_mosaics/DEM_global_mosaic_hillshade/ImageServer",
-              { kind: "image", rasterFunction: "ColorHillshade", format: "jpgpng", attribution: "Relief: NOAA NCEI" })],
-            ["ref", esriXYZ("Ocean/World_Ocean_Reference")]] },
   { id: "imagery", label: "Satellite imagery", note: "Esri World Imagery; useful for shallow reefs and coastlines",
-    parts: [["base", esriXYZ("World_Imagery", { maxzoom: 17, attribution: "Imagery: Esri, Maxar, and contributors" })]] },
-  { id: "gray", label: "Light gray", note: "Esri light gray canvas; keeps data layers easy to read",
-    parts: [["base", esriXYZ("Canvas/World_Light_Gray_Base", { attribution: "Basemap: Esri" })]] }
+    parts: [["base", esriXYZ("World_Imagery", { maxzoom: 17, attribution: "Imagery: Esri, Maxar, and contributors" })]] }
 ];
-
-// Simple edition: keep exactly two basemaps. Other definitions above are dormant.
-BASEMAPS.splice(0, BASEMAPS.length, ...BASEMAPS.filter(b => ["ocean", "imagery"].includes(b.id)));
 
 // ---- Overlays, grouped by report theme ------------------------------------
 const OVERLAYS = [
   { group: "Seafloor", id: "gap", label: "Seafloor mapping coverage", note: "NOAA Bathymetry Gap Analysis, 100 m cells. Pink: 1 to 2 soundings. Purple: 3 or more. Blank: unmapped.",
-    links: [{ label: "NOAA U.S. Bathymetry Gap Analysis", url: "https://iocm.noaa.gov/seabed-2030-bathymetry.html" }],
-    opacity: 0.8, src: () => esriExport(GAP_SERVICE, { tileSize: 256, attribution: "Mapping coverage: NOAA U.S. Bathymetry Gap Analysis" }) },
+    opacity: 0.8, make: () => mapImage(GAP_SERVICE, { attribution: "Mapping coverage: NOAA U.S. Bathymetry Gap Analysis" }) },
   { group: "Seafloor", id: "multibeam", label: "Multibeam bathymetry", note: "NCEI multibeam mosaic, shaded relief. Shows where modern surveys exist.",
-    links: [NCEI_BATHY_VIEWER],
-    opacity: 1, src: () => esriExport(MULTIBEAM_SERVICE,
-      { kind: "image", rasterFunction: MULTIBEAM_FUNCTION, format: "png", attribution: "Multibeam: NOAA NCEI" }) },
+    opacity: 1, make: () => imageryLayer("https://gis.ngdc.noaa.gov/arcgis/rest/services/multibeam_mosaic/ImageServer",
+      "MultidirectionalHillshadeHaxby_8000-0", { attribution: "Multibeam: NOAA NCEI" }) },
   { group: "Seafloor", id: "bag", label: "NOS hydrographic surveys", note: "High-resolution survey grids (BAG), shaded relief. Zoom in to see detail.",
-    links: [NCEI_BATHY_VIEWER],
-    opacity: 1, src: () => esriExport("https://gis.ngdc.noaa.gov/arcgis/rest/services/bag_bathymetry/ImageServer",
-      { kind: "image", rasterFunction: "ColorHillshadeBAG", format: "png", minzoom: 7, attribution: "Surveys: NOAA NCEI" }) },
+    opacity: 1, make: () => imageryLayer("https://gis.ngdc.noaa.gov/arcgis/rest/services/bag_bathymetry/ImageServer",
+      "ColorHillshadeBAG", { minScale: scaleAtLevel(ZOOM_HIDE_MARKS + 1), attribution: "Surveys: NOAA NCEI" }) },
   { group: "Water and climate", id: "dhw", label: "Coral heat stress (degree heating weeks)", note: "NOAA Coral Reef Watch, latest daily 5 km. Around 4 °C-weeks, significant bleaching is expected.",
-    links: [CRW_5KM],
-    opacity: 0.75, src: () => crwWms("CRW_DHW") },
+    opacity: 0.75, make: () => crwLayer("CRW_DHW") },
   { group: "Water and climate", id: "ssta", label: "Sea surface temperature anomaly", note: "NOAA Coral Reef Watch CoralTemp, latest day, compared with the long-term average for the date.",
-    links: [CRW_5KM],
-    opacity: 0.75, src: () => crwWms("CRW_SSTANOMALY") },
+    opacity: 0.75, make: () => crwLayer("CRW_SSTANOMALY") },
   { group: "Water and climate", id: "nsst", label: "Sea surface temperature", note: "NOAA Coral Reef Watch CoralTemp, daily 5 km. Uses the same source as the report. One climate surface is shown at a time.",
-    links: [CRW_5KM],
-    opacity: 0.8, src: () => crwWms("CRW_SST") },
+    opacity: 0.8, make: () => crwLayer("CRW_SST") },
   { group: "Human use", id: "ais", label: "Vessel traffic, 2024", note: "AIS vessel transit counts, MarineCadastre.gov. Brighter areas are busier.",
-    links: [{ label: "NOAA OCM AIS Vessel Transit Counts 2024", url: "https://www.fisheries.noaa.gov/inport/item/75938" }],
-    opacity: 0.85, src: () => esriExport(AIS_SERVICE, { tileSize: 256, attribution: "Vessel traffic: MarineCadastre.gov" }) }
+    opacity: 0.85, make: () => mapImage(AIS_SERVICE, { attribution: "Vessel traffic: MarineCadastre.gov" }) }
 ].filter(layer => ENABLED_LAYER_IDS.has(layer.id));
 OVERLAYS.forEach(o => { o.on = false; });
 const overlayOn = id => { const o = OVERLAYS.find(x => x.id === id); return !!(o && o.on); };
 
-// Layer ids are added in a fixed order so overlays always sit above basemaps
-// and boundaries always sit on top. "bd-fill" is the anchor for overlays.
-const BASE_IDS = ["bm-base", "bm-ref"];
+// ---- The map and its layer stack -------------------------------------------
+// Stack order, bottom to top: basemap, overlays and hosted layers, boundaries, markers.
+const viewEl = document.getElementById("map");       // <arcgis-scene>
+const boundaryLayer = new GraphicsLayer({ title: "Sanctuary boundaries", listMode: "hide" });
+const markerLayer = new GraphicsLayer({ title: "Sanctuary markers", listMode: "hide" });
+const esriMap = new EsriMap({ layers: [boundaryLayer, markerLayer] });
+let view = null;                                     // the SceneView, once ready
+
+const baseLayers = [];
+const overlayLayers = new Map();
+const hostedLayers = new Map();
+const hostedBlobs = new Map();
 let currentBasemap = null;
-// Basemaps must sit below any overlay that is already on, so the insertion
-// point is the lowest live overlay, falling back to the boundary fill.
-function bottomOfStack() {
-  const first = (map.getStyle().layers || []).find(l => l.id.startsWith("ov-") || l.id.startsWith("c-"));
-  if (first) return first.id;
-  return map.getLayer("bd-fill") ? "bd-fill" : undefined;
+let uiReady = false;   // set once the sidebar and report elements exist
+
+// Everything that needs the view waits on this. If WebGL is unavailable it rejects.
+const viewReady = customElements.whenDefined("arcgis-scene").then(() => {
+  viewEl.map = esriMap;
+  return viewEl.viewOnReady();
+}).then(() => {
+  view = viewEl.view;
+  // Even lighting all round (the default sun lighting darkens the night side of the globe).
+  try {
+    view.environment.lighting = { type: "virtual" };
+    view.environment.atmosphereEnabled = true;
+    view.environment.starsEnabled = false;
+    view.environment.background = { type: "color", color: [7, 24, 40, 1] };
+  } catch (e) { console.warn("[map] environment settings not applied", e); }
+  // The MapLibre build was flat: no tilting or rotating. Keep it that way.
+  try { view.constraints.tilt = { max: 0 }; } catch (e) { /* optional */ }
+  try { view.navigation.actionMap.dragSecondary = "none"; } catch (e) { /* optional */ }
+});
+viewReady.catch(err => {
+  console.error("[map] the 3D view could not start", err);
+  const n = document.getElementById("tile-note");
+  n.textContent = "The map could not start. It needs a browser with WebGL enabled.";
+  n.hidden = false;
+});
+
+// ---- Layer health ----------------------------------------------------------
+// A layer that cannot load (service down, blocked by CORS, bad URL) reports through
+// layer.load() and whenLayerView(). Basemap failures show the fallback note; overlay
+// failures replace that layer's note in the panel until it recovers.
+const tileHealth = {};
+function watchLayer(layer, sourceId, overlayId) {
+  const h = tileHealth[sourceId] = { loaded: false, overlayId, note: null, layer };
+  layer.load().then(() => onLayerOk(sourceId, layer), err => onLayerFail(sourceId, layer, err));
+  viewReady.then(() => viewEl.whenLayerView(layer)).then(
+    lv => reactiveUtils.whenOnce(() => !lv.updating).then(() => onLayerOk(sourceId, layer)),
+    err => onLayerFail(sourceId, layer, err)
+  ).catch(() => {});
+  return h;
 }
+function clearTileError(h) {
+  if (!h.note) return;
+  const n = document.getElementById("note-" + h.overlayId);
+  if (n) { n.textContent = h.note; n.classList.remove("is-error"); }
+  h.note = null;
+}
+function onLayerOk(sourceId, layer) {
+  const h = tileHealth[sourceId];
+  if (!h || h.layer !== layer) return;               // layer was replaced or removed
+  h.loaded = true;
+  if (sourceId === "bm-base") {
+    viewEl.classList.remove("no-tiles");
+    document.getElementById("tile-note").hidden = true;
+  } else clearTileError(h);
+}
+function onLayerFail(sourceId, layer, err) {
+  const h = tileHealth[sourceId];
+  if (!h || h.layer !== layer || h.loaded) return;
+  console.warn("[layer]", sourceId, err && err.message);
+  if (sourceId === "bm-base") {
+    viewEl.classList.add("no-tiles");
+    document.getElementById("tile-note").hidden = false;
+  } else if (h.overlayId) {
+    const n = document.getElementById("note-" + h.overlayId);
+    if (n && !h.note) { h.note = n.textContent; n.textContent = "This service isn't responding right now. Try again in a moment."; n.classList.add("is-error"); }
+  }
+}
+
+// ---- Basemap and overlay switching ----------------------------------------
 function setBasemap(id) {
   const next = BASEMAPS.find(b => b.id === id) || BASEMAPS[0];
-  BASE_IDS.forEach(lid => { if (map.getLayer(lid)) map.removeLayer(lid); if (map.getSource(lid)) map.removeSource(lid); });
-  const before = bottomOfStack();
-  next.parts.forEach(([slot, src], i) => {
-    const lid = slot === "base" ? "bm-base" : "bm-ref";
-    map.addSource(lid, src);
-    map.addLayer({ id: lid, type: "raster", source: lid, paint: { "raster-opacity": 1 } }, before);
-    if (i === 0) watchTiles(lid);
+  baseLayers.splice(0).forEach(l => esriMap.remove(l));
+  next.parts.forEach(([, src], i) => {
+    const layer = new TileLayer({ url: src.url, copyright: src.attribution });
+    esriMap.add(layer, i);                           // the bottom of the stack
+    baseLayers.push(layer);
+    if (i === 0) watchLayer(layer, "bm-base");
   });
   currentBasemap = next;
-  if (typeof report !== 'undefined' && !report.hidden && activeId) ensureReportMap(activeId);
+  if (uiReady && !report.hidden && activeId) ensureReportMap(activeId);
   const r = document.querySelector(`input[name="basemap"][value="${next.id}"]`);
   if (r) r.checked = true;
 }
 
+// New layers go directly beneath the boundaries, above every other overlay.
+const insertBelowBoundaries = layer => esriMap.add(layer, esriMap.layers.indexOf(boundaryLayer));
+
 function setOverlay(id, on) {
   const o = OVERLAYS.find(x => x.id === id);
   if (!o) return;
-  const lid = "ov-" + id;
   if (on && CLIMATE_SURFACES[id]) {
     OVERLAYS.filter(x => x.id !== id && x.on && CLIMATE_SURFACES[x.id]).forEach(x => setOverlay(x.id, false));
     climateMapHealth.set(id, { loaded: 0, errors: 0 });
   }
-  if (on && !map.getLayer(lid)) {
-    map.addSource(lid, o.src());
-    map.addLayer({ id: lid, type: "raster", source: lid, paint: { "raster-opacity": o.opacity, "raster-resampling": CLIMATE_SURFACES[id] ? "nearest" : "linear" } },
-      map.getLayer("bd-fill") ? "bd-fill" : undefined);
-    watchTiles(lid, id);
+  if (on && !overlayLayers.has(id)) {
+    const layer = o.make();
+    layer.opacity = o.opacity;
+    overlayLayers.set(id, layer);
+    insertBelowBoundaries(layer);
+    watchLayer(layer, "ov-" + id, id);
   }
-  if (!on && map.getLayer(lid)) { map.removeLayer(lid); map.removeSource(lid); }
+  if (!on && overlayLayers.has(id)) {
+    const layer = overlayLayers.get(id);
+    overlayLayers.delete(id);
+    delete tileHealth["ov-" + id];
+    esriMap.remove(layer);
+  }
   o.on = on;
   const cb = document.getElementById("ov-cb-" + id);
   if (cb) cb.checked = on;
@@ -1297,215 +1317,178 @@ function updateLayerCount() {
   if (el) el.textContent = n ? `${n} on` : "";
 }
 
-// ---- Tile health -----------------------------------------------------------
-// MapLibre reports tile failures on the map "error" event, tagged with the
-// source. Four strikes with nothing loaded means the service is down.
-const tileHealth = {};
-function watchTiles(sourceId, overlayId) { tileHealth[sourceId] = { errs: 0, loaded: false, overlayId, note: null }; }
-function clearTileError(h) {
-  if (!h.note) return;
-  const n = document.getElementById("note-" + h.overlayId);
-  if (n) { n.textContent = h.note; n.classList.remove("is-error"); }
-  h.note = null;
-}
-map.on("data", e => {
-  const h = e.sourceId && tileHealth[e.sourceId];
-  if (!h || e.dataType !== "source" || !e.tile) return;
-  h.loaded = true;
-  h.errs = 0;                       // a good tile clears the strike count
-  if (e.sourceId === "bm-base") {
-    document.getElementById("map").classList.remove("no-tiles");
-    document.getElementById("tile-note").hidden = true;
-  } else clearTileError(h);
-});
-map.on("error", e => {
-  const h = e.sourceId && tileHealth[e.sourceId];
-  if (!h) return;
-  // Log the failing request: ArcGIS reports most problems as a JSON error body
-  // with HTTP 200, which is invisible here but readable if you open the URL.
-  if (e.error && e.error.url) console.warn("[tile]", e.sourceId, e.error.status || "", e.error.url);
-  if (++h.errs < (CLIMATE_SURFACES[h.overlayId] ? 1 : 4)) return;
-  if (e.sourceId === "bm-base") {
-    document.getElementById("map").classList.add("no-tiles");
-    document.getElementById("tile-note").hidden = false;
-  } else if (h.overlayId) {
-    const n = document.getElementById("note-" + h.overlayId);
-    if (n && !h.note) { h.note = n.textContent; n.textContent = "This service isn't responding at this zoom. Try zooming in."; n.classList.add("is-error"); }
-  }
-});
-
 // ---- Layer panel -----------------------------------------------------------
-// "Data source" links under a layer's note. Kept in their own element because the
-// tile-health check rewrites the note's text when a service stops responding.
-function layerLinks(o) {
-  if (!o.links || !o.links.length) return "";
-  return `<small class="lp-src">Data source: ${o.links.map(l =>
-    `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}<span class="sr-only"> (opens in a new tab)</span></a>`).join(" · ")}</small>`;
+// Plain HTML placed in the scene's top-right slot.
+function buildLayerPanel() {
+  const div = document.createElement("div");
+  div.className = "layer-panel";
+  const groups = [...new Set(OVERLAYS.map(o => o.group))];
+  div.innerHTML = `
+    <button type="button" class="lp-head" aria-expanded="false" aria-controls="lp-body"><span>Map layers</span><span class="lp-count" id="layer-count"></span><span class="chev" aria-hidden="true"></span></button>
+    <div class="lp-body" id="lp-body" hidden>
+      <fieldset><legend>Basemap</legend>
+        ${BASEMAPS.map(b => `<label><input type="radio" name="basemap" value="${b.id}"><span>${esc(b.label)}<small>${esc(b.note)}</small></span></label>`).join("")}
+      </fieldset>
+      ${groups.map(g => `<fieldset><legend>${esc(g)}</legend>
+        ${OVERLAYS.filter(o => o.group === g).map(o => `<label><input type="checkbox" id="ov-cb-${o.id}" data-ov="${o.id}"><span>${esc(o.label)}<small id="note-${o.id}">${esc(o.note)}</small></span></label>`).join("")}
+      </fieldset>`).join("")}
+    </div>`;
+  const head = div.querySelector(".lp-head"), body = div.querySelector(".lp-body");
+  head.addEventListener("click", () => { const open = body.hidden; body.hidden = !open; head.setAttribute("aria-expanded", String(open)); });
+  div.querySelectorAll('input[name="basemap"]').forEach(r => r.addEventListener("change", e => setBasemap(e.target.value)));
+  div.querySelectorAll("input[data-ov]").forEach(cb => cb.addEventListener("change", e => setOverlay(e.target.dataset.ov, e.target.checked)));
+  return div;
 }
-class LayerPanel {
-  onAdd() {
-    const div = document.createElement("div");
-    div.className = "layer-panel maplibregl-ctrl";
-    const groups = [...new Set(OVERLAYS.map(o => o.group))];
-    div.innerHTML = `
-      <button type="button" class="lp-head" aria-expanded="false" aria-controls="lp-body"><span>Map layers</span><span class="lp-count" id="layer-count"></span><span class="chev" aria-hidden="true"></span></button>
-      <div class="lp-body" id="lp-body" hidden>
-        <fieldset><legend>Basemap</legend>
-          ${BASEMAPS.map(b => `<label><input type="radio" name="basemap" value="${b.id}"><span>${esc(b.label)}<small>${esc(b.note)}</small></span></label>`).join("")}
-        </fieldset>
-        ${groups.map(g => `<fieldset><legend>${esc(g)}</legend>
-          ${OVERLAYS.filter(o => o.group === g).map(o => `<label><input type="checkbox" id="ov-cb-${o.id}" data-ov="${o.id}"><span>${esc(o.label)}<small id="note-${o.id}">${esc(o.note)}</small>${layerLinks(o)}</span></label>`).join("")}
-        </fieldset>`).join("")}
-      </div>`;
-    ["click", "dblclick", "wheel", "mousedown", "touchstart"].forEach(ev =>
-      div.addEventListener(ev, e => e.stopPropagation()));
-    const head = div.querySelector(".lp-head"), body = div.querySelector(".lp-body");
-    head.addEventListener("click", () => { const open = body.hidden; body.hidden = !open; head.setAttribute("aria-expanded", String(open)); });
-    div.querySelectorAll('input[name="basemap"]').forEach(r => r.addEventListener("change", e => setBasemap(e.target.value)));
-    div.querySelectorAll("input[data-ov]").forEach(cb => cb.addEventListener("change", e => setOverlay(e.target.dataset.ov, e.target.checked)));
-    this._el = div;
-    return div;
-  }
-  onRemove() { this._el.remove(); }
-}
+document.getElementById("layer-panel-host").append(buildLayerPanel());
+setBasemap("ocean");
 
 // ---- Camera ----------------------------------------------------------------
-function flyTo(bounds, maxZoom) {
-  if (!bounds || !bounds.isValid()) return;
-  const opts = { padding: 40, maxZoom: maxZoom || 12, duration: reduceMotion ? 0 : 1400 };
-  map.fitBounds(bounds.toArray(), opts);
+// The scene's field of view is diagonal (Camera.fov), so the visible width and
+// height at a given altitude are its share of that diagonal. To fit a box we work
+// out the altitude at which the ray through the edge of the view meets the Earth at
+// the box's half-angle. This is exact on a sphere, so it also suits the whole-system
+// view, where a flat-map formula would zoom out far too much.
+const EARTH_R = 6371000, FIT_PAD = 1.15, MIN_ALTITUDE = 3000;
+function fitCamera(b) {
+  const [w, s] = b.sw, [e, n] = b.ne;
+  const lat = (s + n) / 2, lon = normLon((w + e) / 2);
+  const rad = d => d * Math.PI / 180;
+  const fov = (view.camera && view.camera.fov) || 55;
+  const W = view.width || 900, H = view.height || 700, diag = Math.hypot(W, H);
+  const tanHalf = Math.tan(rad(fov) / 2);
+  const altitudeFor = (halfSpanDeg, dim) => {
+    const phi = Math.atan(tanHalf * dim / diag);                     // off-axis angle of the view edge
+    const theta = Math.min(rad(halfSpanDeg) * FIT_PAD, 1.4);          // central angle to cover
+    return EARTH_R * Math.sin(Math.min(theta + phi, Math.PI / 2)) / Math.sin(phi) - EARTH_R;
+  };
+  const halfLon = Math.max(e - w, 0.02) * Math.max(Math.cos(rad(lat)), 0.2) / 2;
+  const halfLat = Math.max(n - s, 0.02) / 2;
+  const z = Math.max(altitudeFor(halfLon, W), altitudeFor(halfLat, H), MIN_ALTITUDE);
+  return new Camera({ position: new Point({ x: lon, y: lat, z, spatialReference: WGS84 }), heading: 0, tilt: 0 });
+}
+function flyTo(bounds, maxZoom, opts) {
+  if (!bounds || !bounds.isValid()) return Promise.resolve();
+  const instant = reduceMotion || (opts && opts.instant);
+  return viewReady
+    .then(() => viewEl.goTo(fitCamera(bounds), { animate: !instant, duration: 1400 }))
+    .catch(() => {});                                // an interrupted animation is not an error
 }
 
-const state = {};   // id -> { site, layer, features, rings, bounds, areaM2, parts, marker, depth, human }
+const state = {};   // id -> { site, layer, features, rings, bounds, areaM2, parts, marker, graphics, depth, human }
 let activeId = null, hoverId = null;
 let systemBounds = new Bounds([-181, -16], [-66, 49.5]);
 let boundaryData = null;   // set once the ONMS service responds
 let boundaryVintage = null;
 
-function addMarker(id, lngLat, title) {
-  const el = document.createElement("button");
-  el.type = "button";
-  el.className = "sanc-mark";
-  el.title = title;
-  el.setAttribute("aria-label", title);
-  el.innerHTML = "<span></span>";
-  el.addEventListener("click", e => { e.stopPropagation(); selectSite(id); });
-  const m = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(lngLat).addTo(map);
-  m.setPopup(new maplibregl.Popup({ className: "sanc-tip", closeButton: false, closeOnClick: false, offset: 14 })
-    .setText(title));
-  el.addEventListener("mouseenter", () => m.togglePopup && m.getPopup() && !m.getPopup().isOpen() && m.togglePopup());
-  el.addEventListener("mouseleave", () => m.getPopup() && m.getPopup().isOpen() && m.togglePopup());
-  return m;
-}
+// ---- Boundaries and markers -------------------------------------------------
+// Boundaries are polygon graphics drawn over the basemap; hover and selection swap
+// the graphic's symbol.
+const BD = {
+  rest:   { type: "simple-fill", color: [163, 32, 110, 0.05], outline: { color: [163, 32, 110, 1], width: 1.5, style: "dash" } },
+  hover:  { type: "simple-fill", color: [163, 32, 110, 0.10], outline: { color: [209, 45, 142, 1], width: 2.5 } },
+  active: { type: "simple-fill", color: [163, 32, 110, 0.14], outline: { color: [209, 45, 142, 1], width: 3 } }
+};
+const MARK = {
+  rest:   { type: "simple-marker", style: "circle", size: 12, color: [255, 255, 255, 1], outline: { color: [163, 32, 110, 1], width: 3 } },
+  hover:  { type: "simple-marker", style: "circle", size: 15, color: [255, 255, 255, 1], outline: { color: [209, 45, 142, 1], width: 3.5 } },
+  active: { type: "simple-marker", style: "circle", size: 16, color: [163, 32, 110, 1], outline: { color: [255, 255, 255, 1], width: 2.5 } }
+};
+const paintedAs = new WeakMap();   // graphic -> "rest" | "hover" | "active"
 
+function addMarker(id, lngLat, title) {
+  const g = new Graphic({
+    geometry: new Point({ x: normLon(lngLat[0]), y: lngLat[1], spatialReference: WGS84 }),
+    attributes: { sid: id, title }, symbol: MARK.rest
+  });
+  paintedAs.set(g, "rest");
+  markerLayer.add(g);
+  return g;
+}
 SITES.forEach(site => {
   const b = bboxBounds2(site.bbox);
-  state[site.id] = { site, layer: null, bounds: b, areaM2: null, parts: 0, marker: null, _pending: b.getCenter() };
+  state[site.id] = { site, layer: null, bounds: b, areaM2: null, parts: 0, marker: addMarker(site.id, b.getCenter(), site.name), graphics: [] };
 });
 
-// ---- Boundaries ------------------------------------------------------------
-// One GeoJSON source for every sanctuary. Hover and selection are carried on
-// feature-state, so repainting is a state write rather than a restyle.
-const BD_SOURCE = "boundaries";
-const BD_EMPTY = { type: "FeatureCollection", features: [] };
-function addBoundaryLayers() {
-  if (map.getSource(BD_SOURCE)) return;
-  map.addSource(BD_SOURCE, { type: "geojson", data: BD_EMPTY, promoteId: "sid" });
-  map.addLayer({
-    id: "bd-fill", type: "fill", source: BD_SOURCE,
-    paint: {
-      "fill-color": "#A3206E",
-      "fill-opacity": ["case", ["boolean", ["feature-state", "active"], false], 0.14,
-                               ["boolean", ["feature-state", "hover"], false], 0.10, 0.05]
-    }
-  });
-  // Soft casing stands in for the old SVG glow filter.
-  map.addLayer({
-    id: "bd-glow", type: "line", source: BD_SOURCE,
-    paint: {
-      "line-color": "#D12D8E", "line-width": 9, "line-blur": 7,
-      "line-opacity": ["case", ["boolean", ["feature-state", "active"], false], 0.85,
-                               ["boolean", ["feature-state", "hover"], false], 0.6, 0]
-    }
-  });
-  // Resting state: the dashed magenta boundary.
-  map.addLayer({
-    id: "bd-line", type: "line", source: BD_SOURCE,
-    paint: {
-      "line-color": "#A3206E", "line-width": 1.5, "line-dasharray": [5, 4],
-      "line-opacity": ["case", ["boolean", ["feature-state", "active"], false], 0,
-                               ["boolean", ["feature-state", "hover"], false], 0, 1]
-    }
-  });
-  // Hover and selection: a solid, heavier line on top.
-  map.addLayer({
-    id: "bd-line-hot", type: "line", source: BD_SOURCE,
-    paint: {
-      "line-color": "#D12D8E",
-      "line-width": ["case", ["boolean", ["feature-state", "active"], false], 3, 2.5],
-      "line-opacity": ["case", ["boolean", ["feature-state", "active"], false], 1,
-                               ["boolean", ["feature-state", "hover"], false], 1, 0]
-    }
-  });
+// Esri polygons want outer rings clockwise and holes counter-clockwise. GeoJSON from
+// the service may not follow that, so rings are classified (as for the area maths)
+// and reversed where needed. Longitudes keep their date-line shift (see shiftCoords).
+function esriRings(g) {
+  return classifyRings(g).map(x => ((x.a > 0) === x.outer) ? x.r : x.r.slice().reverse());
 }
-
-const bdTip = new maplibregl.Popup({ className: "sanc-tip", closeButton: false, closeOnClick: false, offset: 6 });
-function wireBoundaryInteraction() {
-  map.on("click", "bd-fill", e => { if (e.features[0]) selectSite(e.features[0].id); });
-  map.on("mousemove", "bd-fill", e => {
-    const f = e.features[0];
-    if (!f) return;
-    map.getCanvas().style.cursor = "pointer";
-    if (hoverId !== f.id) { const prev = hoverId; hoverId = f.id; setFeatState(prev); setFeatState(hoverId); }
-    const s = state[f.id];
-    bdTip.setLngLat(e.lngLat).setText(s ? s.site.name : "").addTo(map);
+function setSiteGraphics(id, s, feats) {
+  s.graphics.forEach(g => boundaryLayer.remove(g));
+  s.graphics = [];
+  feats.forEach(f => {
+    const rings = esriRings(f.geometry);
+    if (!rings.length) return;
+    const g = new Graphic({ geometry: new Polygon({ rings, spatialReference: WGS84 }), attributes: { sid: id }, symbol: BD.rest });
+    paintedAs.set(g, "rest");
+    s.graphics.push(g);
   });
-  map.on("mouseleave", "bd-fill", () => {
-    map.getCanvas().style.cursor = "";
-    const prev = hoverId; hoverId = null; setFeatState(prev);
-    bdTip.remove();
-  });
+  boundaryLayer.addMany(s.graphics);
+  const c = s.bounds.getCenter();
+  if (s.marker) s.marker.geometry = new Point({ x: normLon(c[0]), y: c[1], spatialReference: WGS84 });
+  else s.marker = addMarker(id, c, s.site.name);
 }
 function setFeatState(id) {
-  if (!id || !map.getSource(BD_SOURCE)) return;
-  map.setFeatureState({ source: BD_SOURCE, id },
-    { hover: id === hoverId && id !== activeId, active: id === activeId });
+  const s = id && state[id];
+  if (!s) return;
+  const key = id === activeId ? "active" : id === hoverId ? "hover" : "rest";
+  s.graphics.forEach(g => { if (paintedAs.get(g) !== key) { paintedAs.set(g, key); g.symbol = BD[key]; } });
+  if (s.marker && paintedAs.get(s.marker) !== key) { paintedAs.set(s.marker, key); s.marker.symbol = MARK[key]; }
 }
 function paint(id) { setFeatState(id); }
-function paintAll() {
-  Object.keys(state).forEach(setFeatState);
-  Object.entries(state).forEach(([id, s]) => {
-    const el = s.marker && s.marker.getElement();
-    if (el) el.classList.toggle("is-active", id === activeId);
+function paintAll() { Object.keys(state).forEach(setFeatState); }
+
+// ---- Pointer interaction ----------------------------------------------------
+// hitTest against the two graphics layers only. Hover is throttled to one test per frame.
+const mapTip = document.getElementById("map-tip");
+const hitOptions = () => ({ include: [boundaryLayer, markerLayer] });
+const sidOf = res => {
+  const hit = res.results.find(r => r.graphic && r.graphic.attributes && r.graphic.attributes.sid);
+  return hit ? hit.graphic.attributes.sid : null;
+};
+let moveEvent = null, moveQueued = false;
+function onPointerMove(e) {
+  if (e.pointerType === "touch") return;
+  moveEvent = { x: e.x, y: e.y };
+  if (moveQueued) return;
+  moveQueued = true;
+  requestAnimationFrame(() => {
+    moveQueued = false;
+    const p = moveEvent;
+    view.hitTest(p, hitOptions()).then(res => {
+      const sid = sidOf(res);
+      viewEl.classList.toggle("is-pointing", !!sid);
+      if (sid !== hoverId) { const prev = hoverId; hoverId = sid; setFeatState(prev); setFeatState(hoverId); }
+      if (sid && state[sid]) {
+        mapTip.textContent = state[sid].site.name;
+        mapTip.style.transform = `translate(${Math.round(p.x + 12)}px, ${Math.round(p.y + 14)}px)`;
+        mapTip.hidden = false;
+      } else mapTip.hidden = true;
+    }).catch(() => {});
   });
 }
-
-// ---- Boot ------------------------------------------------------------------
-map.on("style.load", () => {
-  // Globe when zoomed out, easing to mercator as you zoom in.
-  map.setProjection({ type: "globe" });
-  // Native globe atmosphere follows the Earth's limb during pan/zoom and
-  // resize. Keep the luminous blue rim at system scale, then fade it away
-  // for clear sanctuary-level data. No overlay canvas or animation loop.
-  map.setSky({
-    "sky-color": "#338ED5", "sky-horizon-blend": 0.45,
-    "horizon-color": "#B8EEFF", "horizon-fog-blend": 0.6,
-    "fog-color": "#CFE2E8", "fog-ground-blend": 0.05,
-    "atmosphere-blend": ["interpolate", ["linear"], ["zoom"],
-      0, 1, 2.5, 1, 4, 0.55, 6, 0]
+function clearHover() {
+  mapTip.hidden = true;
+  viewEl.classList.remove("is-pointing");
+  if (hoverId) { const prev = hoverId; hoverId = null; setFeatState(prev); }
+}
+viewReady.then(() => {
+  view.on("pointer-move", onPointerMove);
+  view.on("click", e => {
+    view.hitTest({ x: e.x, y: e.y }, hitOptions()).then(res => { const sid = sidOf(res); if (sid) selectSite(sid); }).catch(() => {});
   });
-  addBoundaryLayers();
-  if (boundaryData) map.getSource(BD_SOURCE).setData(boundaryData);
-  setBasemap("ocean");
-  wireBoundaryInteraction();
-  Object.entries(state).forEach(([id, s]) => {
-    if (!s.marker && s._pending) { s.marker = addMarker(id, s._pending, s.site.name); delete s._pending; }
-  });
+  viewEl.addEventListener("pointerleave", clearHover);
+  // Markers give way to the boundaries once you are zoomed in (was MapLibre zoom 7).
+  const hideAt = scaleAtLevel(ZOOM_HIDE_MARKS + 1);
+  reactiveUtils.watch(() => view.scale, sc => { markerLayer.visible = sc > hideAt; }, { initial: true });
   paintAll();
-  map.fitBounds(systemBounds.toArray(), { padding: 20, duration: 0 });
+  flyTo(activeId ? state[activeId].bounds : systemBounds, 4, { instant: true });
 });
-map.addControl(new LayerPanel(), "top-right");
-map.on("zoom", () => document.getElementById("map").classList.toggle("zoomed-in", map.getZoom() >= ZOOM_HIDE_MARKS));
+document.getElementById("map-reset").addEventListener("click", () => {
+  flyTo(activeId && state[activeId].bounds && state[activeId].bounds.isValid() ? state[activeId].bounds : systemBounds, 12);
+});
 
 // ===========================================================================
 // Sidebar
@@ -1560,13 +1543,12 @@ function sidebarThemes(site) {
   const list = document.getElementById("theme-list");
   list.innerHTML = "";
   const rows = resolvedThemes(site).map(t => {
-    if (REPORT_PREVIEW_MODE) return { title: t.title, label: "Coming soon", live: false };
     const inc = t.data.filter(d => d.status === "included").length;
     const loading = t.data.some(d => d.status === "pending");
     const unavailable = t.data.some(d => ["error", "limited"].includes(d.status));
     return { title: t.title, label: loading ? "Loading" : unavailable ? "Check coverage" : "Available", live: !loading && !unavailable };
   });
-  if (ENABLED_REPORT_SECTIONS.has("gaps") && !REPORT_PREVIEW_MODE) rows.push({ title: "Coverage and limitations", label: "Notes", live: true });
+  if (ENABLED_REPORT_SECTIONS.has("gaps")) rows.push({ title: "Coverage and limitations", label: "Notes", live: true });
   rows.forEach(t => {
     const li = document.createElement("li");
     li.innerHTML = `<span>${esc(t.title)}</span><span class="status${t.live ? " is-live" : ""}">${t.label}</span>`;
@@ -1895,17 +1877,8 @@ async function loadDepth(id) {
   if (!s.features) return (s.depth = { error: "No boundary geometry to clip against." });
   const tried = [];
   for (const [name, fn] of [["NCEI image service", depthFromImageService], ["ERDDAP", depthFromErddap]]) {
-    try {
-      const res = await fn(s);
-      // Record why the primary source was skipped so a silent fallback to ETOPO1 is visible.
-      if (tried.length && res && !res.error) { res.primaryError = tried.join("; "); if (res.audit) res.audit.primaryError = res.primaryError; }
-      return (s.depth = res);
-    }
-    catch (e) {
-      const why = e.name === "AbortError" ? "timed out" : e.message;
-      console.warn(`[depth] ${name} failed for ${id}:`, e);
-      tried.push(`${name} (${why})`);
-    }
+    try { return (s.depth = await fn(s)); }
+    catch (e) { tried.push(`${name} (${e.name === "AbortError" ? "timed out" : e.message})`); }
   }
   return (s.depth = { error: "Depth sources couldn't be reached: " + tried.join("; ") + "." });
 }
@@ -2003,65 +1976,6 @@ async function loadMapping(id) {
   }
 }
 
-// Multibeam survey coverage from the NCEI multibeam mosaic.
-async function loadMultibeam(id) {
-  const s = state[id];
-  if (s.multibeam) return s.multibeam;
-  if (!s.features) return (s.multibeam = { error: "No boundary geometry to sample against." });
-  const b = s.bounds;
-  const west = Math.max(-180, b.getWest()), east = Math.min(180, b.getEast());
-  const south = b.getSouth(), north = b.getNorth();
-  const span = Math.max(east - west, north - south);
-  const ps = Math.max(0.0009, span / MAX_EXPORT_PX);             // about the mosaic's own ~90 m cells
-  const w = Math.max(1, Math.round((east - west) / ps)), h = Math.max(1, Math.round((north - south) / ps));
-  const grid = { w, h, west, north, psx: (east - west) / w, psy: (north - south) / h };
-  // Nearest-neighbor resampling keeps the data edge crisp; bilinear would feather it.
-  const url = `${MULTIBEAM_SERVICE}/exportImage?bbox=${west},${south},${east},${north}&bboxSR=4326&imageSR=4326` +
-    `&size=${w},${h}&format=png32&interpolation=RSP_NearestNeighbor` +
-    `&renderingRule=${encodeURIComponent(JSON.stringify({ rasterFunction: MULTIBEAM_FUNCTION }))}&f=image`;
-  try {
-    const alpha = await decodeAlpha(url, w, h);
-    const counts = countCoverage(rasterizeMask(s.features, grid), alpha, new Uint8Array(w * h), grid);
-    counts.audit.requests = [url];
-    counts.audit.fetchedAt = new Date().toISOString();
-    counts.audit.rasterFunction = MULTIBEAM_FUNCTION;
-    const meters = grid.psx * 111320 * Math.cos(rad((north + south) / 2));
-    return (s.multibeam = {
-      samples: counts.samples, covered: counts.better, audit: counts.audit,
-      spacing: meters < 1000 ? `about ${fmt(Math.round(meters / 10) * 10, 0)} m` : `about ${fmt(meters / 1000, 1)} km`
-    });
-  } catch (e) {
-    console.warn("[multibeam] coverage export failed:", e);
-    return (s.multibeam = { error: e.name === "AbortError" ? "The multibeam coverage service timed out." :
-      "The multibeam coverage service couldn't be read from this page (" + (e.message || "blocked") + ")." });
-  }
-}
-// Share of the boundary's water area with multibeam data. Multibeam never covers
-// land, so land inside the boundary is taken out of the denominator, as for mapping.
-function multibeamShare(mb, d) {
-  const water = d && !d.error && d.landShare != null && d.landShare < 0.5 ? 1 - d.landShare : 1;
-  return { covered: Math.min(1, mb.covered / water), landAdjusted: water < 0.995 };
-}
-const multibeamOK = mb => mb && !mb.error && mb.samples >= MIN_RELIABLE_CELLS;
-function multibeamBlock(mb, d, areaM2) {
-  if (!mb) return `<p class="chart-note">Sampling the NCEI multibeam mosaic…</p>`;
-  if (mb.error) return `<p class="r-callout">${esc(mb.error)}</p>`;
-  if (!multibeamOK(mb)) return `<p class="r-callout">The sanctuary is too small to estimate multibeam coverage at this resolution.</p>`;
-  const sh = multibeamShare(mb, d);
-  const pct = x => fmt(x * 100, x < 0.1 && x > 0 ? 1 : 0);
-  const km2 = areaM2 ? (areaM2 / 1e6) * mb.covered : null;
-  const seg = (x, cls) => `<span style="width:${(x * 100).toFixed(2)}%" class="${cls}"></span>`;
-  const btn = OVERLAYS.some(o => o.id === "multibeam") ? " " + showBtn("multibeam", "Show multibeam on map") : "";
-  return `<p><strong>Multibeam survey coverage.</strong> Share of the seafloor with multibeam sonar data in the NOAA NCEI global multibeam mosaic.${btn}</p>
-    <div class="cover-bar" role="img" aria-label="${pct(sh.covered)}% covered by multibeam data, ${pct(1 - sh.covered)}% not covered">
-      ${seg(sh.covered, "b")}${seg(1 - sh.covered, "u")}</div>
-    <table class="sources counts" style="margin-bottom:10px"><tbody>
-      <tr><td><span class="key b"></span>Covered by multibeam data</td><td>${pct(sh.covered)}%${km2 != null ? ` <small>(about ${fmt(km2)} km², ${fmt(km2 / 2.589988)} sq mi)</small>` : ""}</td></tr>
-      <tr><td><span class="key u"></span>No multibeam data in the mosaic</td><td>${pct(1 - sh.covered)}%</td></tr>
-    </tbody></table>
-    <p class="chart-note">Estimated by sampling the mosaic's shaded-relief image at ${esc(mb.spacing)} spacing, ${fmt(mb.samples, 0)} points inside the boundary.${sh.landAdjusted ? " Adjusted to exclude land inside the boundary." : ""} A point counts as covered if the mosaic has data there. Cells at the very edge of a survey can drop out of the shaded-relief image, so coverage may be slightly understated. Other survey types (single beam, lidar, satellite-derived) aren't counted here.</p>`;
-}
-
 // Correct for land inside the boundary, which the gap grid never marks as mapped.
 function mappedShares(mp, d) {
   const water = d && !d.error && d.landShare != null && d.landShare < 0.5 ? 1 - d.landShare : 1;
@@ -2125,10 +2039,10 @@ async function loadHumanUse(id) {
 // Split view: the report sits beside the map, which stays live and zoomed to
 // the sanctuary. "Full width" hides the map; on phones the report covers the screen.
 function refitMap() {
+  // The scene resizes itself with its container; this only re-frames the sanctuary.
   setTimeout(() => {
-    map.resize();
     const s = activeId && state[activeId];
-    if (s && s.bounds && s.bounds.isValid()) map.fitBounds(s.bounds.toArray(), { padding: 30, maxZoom: 12, duration: 0 });
+    if (s && s.bounds && s.bounds.isValid()) flyTo(s.bounds, 12, { instant: true });
   }, 60);
 }
 function openReport(id) {
@@ -2334,170 +2248,16 @@ reportDoc.addEventListener("change", e => {
 
 // Simple edition does not request unconnected model-summary files.
 
-function reportPlaceholder(id) {
-  const site = state[id].site;
-  reportDoc.innerHTML = `
-    <div class="r-logos">
-      <img src="https://sanctuaries.noaa.gov/media/img/logos/noaa-logo.png"
-           alt="National Oceanic and Atmospheric Administration logo"
-           onerror="this.hidden=true; this.nextElementSibling.hidden=true">
-      <span class="divider" aria-hidden="true"></span>
-      <img src="https://sanctuaries.noaa.gov/media/img/logos/onms-logo-no-text-74.png"
-           alt="National Marine Sanctuaries logo">
-      <span class="wordmark"><strong>National Oceanic and Atmospheric Administration</strong>Office of National Marine Sanctuaries</span>
-    </div>
-    <p class="r-kicker">Sanctuary report</p>
-    <h2 class="r-title" id="r-title">${esc(fullName(site))}</h2>
-    <p class="r-meta">
-      <span>${esc(REGIONS.find(r => r.id === site.region).name)}${site.year ? `. Designated ${site.year}` : ""}.</span>
-    </p>
-    <p class="r-callout"><strong>This report is under development.</strong> The map and its data layers are available now. Sanctuary-specific summaries are not part of this first release.</p>
-    <section class="r-section">
-      <h3>Coming soon</h3>
-      <p class="lede">Summaries for this sanctuary, such as seafloor and habitat, water and climate, and human use, will appear here in a future update.</p>
-    </section>
-    <section class="about">
-      <p>Sanctuary boundaries are representations of the legal boundaries in 15 C.F.R. Part 922 and are not for legal use or navigation.</p>
-    </section>`;
-}
-
 function renderReport(id) {
-  if (REPORT_PREVIEW_MODE) return reportPlaceholder(id);
-  const s = state[id], site = s.site;
-  const themes = resolvedThemes(site);
-  const cf = cefiFor(site.id);
-  const km2 = s.areaM2 ? s.areaM2 / 1e6 : null;
-  const sys = systemStats(id);
-  const d = s.depth, hu = s.human, mp = s.mapping;
-  const isOcean = site.type === "ocean";
-  const bed = site.region === "lakes" ? "lakebed" : site.id === "mallows-bay" ? "riverbed" : "seafloor";
-  const Bed = bed[0].toUpperCase() + bed.slice(1);
-  const pct = x => fmt(x * 100, x < 0.1 && x > 0 ? 1 : 0);
-  const sh = mappingOK(mp) ? mappedShares(mp, d) : null;
-  const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-
-  // Templated narrative: deterministic, auditable, numbers slotted in
-  let summary = "";
-  if (km2) {
-    summary += `${esc(fullName(site))} covers about ${fmt(km2)} square kilometers (${fmt(km2 / 2.589988)} square miles)`;
-    if (sys && sys.of === SITES.length) summary += `, making it the ${ordinal(sys.rank)} largest of the ${sys.of} sanctuaries and ${fmt(sys.share * 100, sys.share < 0.01 ? 2 : 1)}% of the system's total area`;
-    summary += ". ";
-    if (s.parts > 1) summary += `Its boundary is made up of ${s.parts} separate areas. `;
-  } else {
-    summary += "The official boundary for this sanctuary couldn't be loaded, so area figures aren't available. ";
-  }
-  if (isOcean) {
-    if (!d) summary += "The depth summary is loading.";
-    else if (d.error) summary += "Depth data couldn't be loaded for this report.";
-    else if (depthOK(d)) summary += `The seafloor within it ranges from about ${fmt(d.min, 0)} to ${fmt(d.max, 0)} meters deep, with a median depth of ${fmt(d.median, 0)} meters.`;
-    else summary += "The sanctuary is too small for the connected depth data to summarize reliably.";
-  }
-  if (sh) summary += ` About ${pct(sh.mapped)}% of its ${bed} has been mapped at 100 m resolution, and ${pct(sh.better)}% has three or more soundings per cell.`;
-  const mbSh = isOcean && multibeamOK(s.multibeam) ? multibeamShare(s.multibeam, d) : null;
-  if (mbSh) summary += ` About ${pct(mbSh.covered)}% of it is covered by multibeam sonar data in the NOAA NCEI mosaic.`;
-  if (isOcean) summary += cefiSentence(site);
-  summary += esc(humanSentence(hu));
-  summary = summary.replace(/\s+/g, " ").trim();
-
-  const figs = [
-    { k: "Area", v: km2 ? `${fmt(km2)} km²` : "Not available", small: km2 ? `${fmt(km2 / 2.589988)} sq mi` : "" },
-    { k: "Size rank", v: sys ? `${ordinal(sys.rank)} of ${sys.of}` : "Not available", small: sys ? `${fmt(sys.share * 100, sys.share < 0.01 ? 2 : 1)}% of system area` : "" },
-    { k: `${Bed} mapped`, v: sh ? `${pct(sh.mapped)}%` : (mp ? "Not available" : "Loading…"), small: sh ? `${pct(sh.better)}% better mapped` : "" },
-    isOcean
-      ? { k: "Median depth", v: depthOK(d) ? `${fmt(d.median, 0)} m` : (d ? "Not available" : "Loading…"), small: depthOK(d) ? `Range ${fmt(d.min, 0)}–${fmt(d.max, 0)} m` : "" }
-      : { k: "Designated", v: site.year || "Not available", small: "" }
-  ];
-
-  let seafloorBody = "";
-  if (isOcean) {
-    seafloorBody = mappingBlock(mp, d, Bed) + multibeamBlock(s.multibeam, d, s.areaM2);
-    if (!d) seafloorBody += `<p class="chart-note">Loading depth data…</p>`;
-    else if (d.error) seafloorBody += `<p class="r-callout">${esc(d.error)}</p>`;
-    else if (!depthOK(d))
-      seafloorBody += `<p class="r-callout">Only ${fmt(d.cells || 0, 0)} depth cell${d.cells === 1 ? "" : "s"} fall inside this boundary, too few for a reliable depth summary. A higher-resolution bathymetry source is needed.</p>`;
-    else seafloorBody += `
-      <p><strong>Depth distribution.</strong> Share of the sanctuary's seafloor in each depth band.</p>
-      ${depthChart(d)}
-      <p class="chart-note">${esc(d.source)} at ${esc(d.resolution)} resolution, using ${fmt(d.cells, 0)} cells inside the boundary.${d.landShare > 0.005 ? ` ${fmt(d.landShare * 100, 0)}% of cells are land or above sea level and are excluded.` : ""} Summaries at this resolution smooth out small banks, pinnacles, and canyon walls.</p>
-      <details><summary>Show as a table</summary>${depthTable(d)}</details>`;
-  }
-
-  // Knowledge gaps: computed from what did and didn't connect
-  const planned = themes.flatMap(t => t.data);
-  const inc = planned.filter(x => x.status === "included").length;
-  const gaps = ["Coverage varies by sanctuary. Missing or failed data are not interpreted as zero."];
-  if (isOcean && d && !d.error) {
-    if (!depthOK(d)) gaps.push("The connected depth data is too coarse for a sanctuary this small.");
-    else gaps.push(`Depth figures come from ${d.resolution} data, which smooths out small banks and pinnacles. Full-resolution survey bathymetry isn't connected yet.`);
-  }
-  if (isOcean && d && d.error) gaps.push("Depth couldn't be summarized because the depth services didn't respond.");
-  if (hu && hu.results) {
-    const failed = hu.results.filter(r => r.count == null).map(r => r.name.toLowerCase());
-    if (failed.length) gaps.push(`These layers couldn't be checked, so their absence isn't confirmed: ${failed.join(", ")}.`);
-  }
-  if (sh) gaps.push(`About ${pct(1 - sh.mapped)}% of the ${bed} has no modern soundings at 100 m resolution, and a further ${pct(sh.minimal)}% has only one or two.`);
-  if (mp && mp.error) gaps.push("Mapping coverage couldn't be estimated because the national coverage grid didn't respond.");
-  if (isOcean && s.multibeam && s.multibeam.error) gaps.push("Multibeam coverage couldn't be estimated because the NCEI multibeam service didn't respond.");
-  if (mbSh) gaps.push(`About ${pct(1 - mbSh.covered)}% of the seafloor has no multibeam data in the NCEI mosaic. Some of it may be mapped by other methods, such as single beam, lidar, or satellite-derived bathymetry.`);
-  if (mp && !mp.error && !mappingOK(mp)) gaps.push("The sanctuary is too small for the national mapping grid; a site-specific survey inventory is needed.");
-  if (isOcean && cf && cf.variables && cf.variables.tob && cf.variables.tob.representation === "nearby")
-    gaps.push("The sanctuary is smaller than one ocean model cell (about 8 km), so modeled temperatures describe the surrounding area rather than the sanctuary itself.");
-  if (isOcean && cf && !hasProjections(cf)) gaps.push("Long-term temperature projections aren't yet published for this sanctuary's model region.");
-  if (isOcean && s.climate && s.climate.error) gaps.push("Current satellite conditions couldn't be summarized: " + s.climate.error);
-  if (isOcean && s.climate && !s.climate.error && !climateMetricOK(s.climate, "sst")) gaps.push("Too few valid satellite cells or insufficient coverage for a sanctuary-wide temperature summary.");
-  if (s.bounds.getWest() < -180) gaps.push("Current satellite summaries include both sides of the date line. The legacy depth, mapping-coverage, and infrastructure calculations exclude the part west of 180°; treat those figures as partial coverage.");
-  gaps.push("Vessel traffic is shown on the map but not yet summarized per sanctuary.");
-  if (!s.layer) gaps.push("The official boundary couldn't be loaded, so no figures could be clipped to it.");
-
+  const s = state[id], site = s && s.site;
+  if (!site) return;
   reportDoc.innerHTML = `
-    <div class="r-logos">
-      <img src="https://sanctuaries.noaa.gov/media/img/logos/noaa-logo.png"
-           alt="National Oceanic and Atmospheric Administration logo"
-           onerror="this.hidden=true; this.nextElementSibling.hidden=true">
-      <span class="divider" aria-hidden="true"></span>
-      <img src="https://sanctuaries.noaa.gov/media/img/logos/onms-logo-no-text-74.png"
-           alt="National Marine Sanctuaries logo">
-      <span class="wordmark"><strong>National Oceanic and Atmospheric Administration</strong>Office of National Marine Sanctuaries</span>
-    </div>
-    <p class="r-kicker">Sanctuary report</p>
-    <h2 class="r-title" id="r-title">${esc(fullName(site))}</h2>
-    <p class="r-meta">
-      <span>${esc(REGIONS.find(r => r.id === site.region).name)}${site.year ? `. Designated ${site.year}` : ""}.</span>
-      <span>Generated ${today}. Boundaries from the ONMS map service${boundaryVintage ? `, updated ${boundaryVintage}` : ""}.</span>
-    </p>
-    <p class="r-summary" data-report-section="overview">${summary}</p>
-    ${reportMapBlock(id)}
-    <dl class="figures" data-report-section="overview">${figs.map(f => `<div><dt>${f.k}</dt><dd>${esc(f.v)}${f.small ? `<small>${esc(f.small)}</small>` : ""}</dd></div>`).join("")}</dl>
-
-    ${themes.map(t => `
-      <section class="r-section">
-        <h3>${esc(t.title)}</h3>
-        <p class="lede">${esc(t.lede)}</p>
-        ${t.id === "seafloor" ? seafloorBody : t.id === "human" ? humanSection(hu) : t.id === "heritage" ? mappingBlock(mp, d, Bed) : t.id === "climate" ? climateNowBlock(site) : ""}
-        ${sourcesTable(t.data)}
-      </section>`).join("")}
-
-    ${hostedReportBlock()}
-    <section class="r-section" data-report-section="gaps">
-      <h3>Data coverage and limitations</h3>
-      <p class="lede">Important context for interpreting the connected datasets.</p>
-      <ul class="gaps">${gaps.map(g => `<li>${esc(g)}</li>`).join("")}</ul>
-    </section>
-
-    <section class="about">
-      <p><strong>About this report.</strong> Figures are generated automatically from the services listed above at the time the report is opened. Areas are computed geodesically from the official boundary, simplified to about 50 m for display, so they may differ slightly from published figures.</p>
-      <p>Sanctuary boundaries are representations of the legal boundaries in 15 C.F.R. Part 922 and are not for legal use or navigation. MarineCadastre.gov layers are compiled from multiple agencies and may not be complete.</p>
+    <section class="coming-soon" aria-labelledby="report-coming-soon-title">
+      <p class="eyebrow">Sanctuary report</p>
+      <h2 id="report-coming-soon-title">Coming soon</h2>
+      <p>Interactive sanctuary reports are in development. This area will bring together concise summaries and visuals from the connected datasets in the explorer.</p>
+      <p class="site-note">Selected sanctuary: <strong>${esc(fullName(site))}</strong></p>
     </section>`;
-
-  reportDoc.insertAdjacentHTML("beforeend", auditBlock(id));
-  reportDoc.querySelectorAll("[data-report-section]").forEach(el => {
-    if (!ENABLED_REPORT_SECTIONS.has(el.dataset.reportSection)) el.remove();
-  });
-  reportDoc.querySelectorAll("[data-show-layer]").forEach(el => {
-    if (!ENABLED_LAYER_IDS.has(el.dataset.showLayer)) el.remove();
-  });
-  ensureReportData(id);
-  ensureReportMap(id);
 }
 
 // ===========================================================================
@@ -2530,8 +2290,8 @@ async function loadBoundaries() {
     (groups[id] = groups[id] || []).push(f);
   });
 
-  // One source holds every boundary; "sid" is promoted to the feature id so
-  // hover and selection can be driven by feature-state.
+  // Each sanctuary's boundary becomes polygon graphics tagged with its id ("sid"),
+  // which is what hover and click resolve to.
   let union = null;
   const allFeats = [];
   Object.entries(groups).forEach(([id, feats]) => {
@@ -2545,14 +2305,10 @@ async function loadBoundaries() {
     const totals = feats.map(f => featureAreaAndParts(f.geometry));
     s.areaM2 = totals.reduce((t, x) => t + x.area, 0);
     s.parts = totals.reduce((t, x) => t + x.parts, 0);
-    const c = s.bounds.getCenter();
-    if (s.marker) s.marker.setLngLat(c);
-    else if (map.loaded() || map.getSource(BD_SOURCE)) s.marker = addMarker(id, c, s.site.name);
-    else s._pending = c;
+    setSiteGraphics(id, s, feats);
     union = union ? union.extend(s.bounds) : new Bounds(s.bounds.getSouthWest(), s.bounds.getNorthEast());
   });
   boundaryData = { type: "FeatureCollection", features: allFeats };
-  if (map.getSource(BD_SOURCE)) map.getSource(BD_SOURCE).setData(boundaryData);
   if (union) systemBounds = union;
 
   const matched = SITES.filter(site => groups[site.id]).length;
@@ -2571,7 +2327,7 @@ async function loadBoundaries() {
   buildRegions();
   paintAll();
   if (activeId) selectSite(activeId);
-  else if (systemBounds.isValid()) map.fitBounds(systemBounds.toArray(), { padding: 20, duration: 0 });
+  else if (systemBounds.isValid()) flyTo(systemBounds, 4, { instant: true });
 }
 
 // Mobile navigation keeps one usable surface visible and resizes the map on return.
@@ -2582,7 +2338,6 @@ function setMobileView(view) {
     if (b.dataset.view === view) b.setAttribute("aria-current", "page");
     else b.removeAttribute("aria-current");
   });
-  if (view === "map") requestAnimationFrame(() => map.resize());
 }
 document.querySelectorAll("[data-view]").forEach(b => b.addEventListener("click", () => {
   if (b.dataset.view === "report") { if (activeId) openReport(activeId); }
@@ -2801,7 +2556,7 @@ function ensureReportData(id) {
   s.pending ||= {};
   if (s.climate && Date.now() - s.climate.fetchedAt >= CLIMATE_CACHE_MS) delete s.climate;
   const jobs = [["human", loadHumanUse], ["mapping", loadMapping]];
-  if (s.site.type === "ocean") jobs.push(["depth", loadDepth], ["multibeam", loadMultibeam], ["climate", loadClimate]);
+  if (s.site.type === "ocean") jobs.push(["depth", loadDepth], ["climate", loadClimate]);
   for (const [key, fn] of jobs) {
     if (s[key] || s.pending[key]) continue;
     s.pending[key] = Promise.resolve().then(() => fn(id)).then(value => { s[key] = value; })
@@ -2823,7 +2578,7 @@ reportDoc.addEventListener("click", e => {
 // ====================== ANALYSIS EXPORTS ===================================
 function auditBlock(id) {
   const s = state[id], pending = Object.keys(s.pending || {}).length;
-  const available = !!(s.climate?.cellRows || s.mapping?.audit || s.multibeam?.audit || s.depth?.audit);
+  const available = !!(s.climate?.cellRows || s.mapping?.audit || s.depth?.audit);
   return `<section class="r-section" data-report-section="audit"><h3>Data behind this report</h3>
     <p>Export the currently loaded calculation inputs. The JSON archive includes the boundary used, source requests, cell weights, masks, summaries and any server histogram. CSV combines available cell records without resampling them onto a common grid.</p>
     <p class="chart-note">${pending ? "Some calculations are still loading. Exports are unavailable until they finish." : "Missing or failed sources are identified in the archive."} Climate rows are sampled grid centers. Mapping rows are pixels from the exported coverage image. Server depth histograms do not contain cell coordinates.</p>
@@ -2842,16 +2597,14 @@ function analysisArchive(id) {
     enabled_layers:[...ENABLED_LAYER_IDS], enabled_report_sections:[...ENABLED_REPORT_SECTIONS],
     provenance:{climate:{producer:"NOAA Coral Reef Watch",host:"PacIOOS ERDDAP",version:"CoralTemp v3.1",dataset:CRW_DATASET,
       metadata:CRW_ROOT+"/info/"+CRW_DATASET+"/index.html",units:{sst:"degree_C",anomaly:"degree_C",dhw:"degree_C weeks"}},
-      mapping:{service:GAP_SERVICE,vintage:GAP_VINTAGE},multibeam:{service:MULTIBEAM_SERVICE,raster_function:MULTIBEAM_FUNCTION},depth:{primary:DEM_SERVICE,fallback:ERDDAP_ETOPO}},
+      mapping:{service:GAP_SERVICE,vintage:GAP_VINTAGE},depth:{primary:DEM_SERVICE,fallback:ERDDAP_ETOPO}},
     methods:{climate:"Grid-center inclusion in displayed boundary; cos(latitude) weights; masks and per-variable validity. Means=sum(value*weight)/sum(valid weights). Coverage=sum(valid weights)/sum(all inside weights). Stride >1 is subsampling. Numeric analysis is separate from map imagery.",
       climate_display_rule:"At least 5 valid cells and 50% weighted coverage per metric; provisional prototype rule, not a validated universal standard.",
       mapping:"Alpha >127 in exported imagery. Class 2=better mapped, 1=minimally mapped, 0=neither. Class 0 can include land or unrepresented coverage. cos(latitude) weights; report may adjust by depth-derived land share.",
-      multibeam:"Alpha >127 in the exported NCEI multibeam mosaic shaded-relief image (nearest-neighbor resampling). Class 2=data present, 0=no data. cos(latitude) weights; report divides by the depth-derived water share. Cells at survey edges can drop out of the shaded-relief image, so coverage may be slightly understated.",
       depth:"Server histograms use bin midpoint elevations and count weights. ETOPO fallback uses sampled elevations and cos(latitude) weights. Nonnegative elevations excluded from depth statistics.",
       limitations:["Climate sampling includes both date-line segments; legacy depth/mapping calculations may omit the western segment.","Grid-center weights are relative, not exact fractional intersection areas in square meters.","Combined CSV is a long table of separate grids, not a spatially aligned multiband raster.","Hosted contextual layers and CEFI precomputed inputs are not cell-level raster observations in this archive."]},
     climate:{summary:slim(s.climate),cells:s.climate?.cellRows || []},
     mapping:{summary:slim(s.mapping),inputs:s.mapping?.audit || null},
-    multibeam:{summary:slim(s.multibeam),inputs:s.multibeam?.audit || null},
     depth:{summary:slim(s.depth),inputs:s.depth?.audit || null},
     human_use:s.human || {status:"not_loaded"},
     hosted_connections:connections.map(c=>({name:c.name,type:c.type,url:c.url})),
@@ -2872,11 +2625,6 @@ function combinedCellCSV(id) {
   if(mapping){const g=mapping.grid;mapping.cellIndices.forEach((index,k)=>{
     const row=Math.floor(index/g.w),col=index%g.w,lat=g.north-(row+.5)*g.psy,lon=g.west+(col+.5)*g.psx;
     push([id,'bathymetry_gap_analysis',index,'',mapping.fetchedAt,lat,lon,'mapping_class',mapping.classes[k],'category',Math.cos(rad(lat)),'',true,'','rendered_export_pixel',GAP_SERVICE]);
-  });}
-  const multibeam = s.multibeam?.audit;
-  if(multibeam){const g=multibeam.grid;multibeam.cellIndices.forEach((index,k)=>{
-    const row=Math.floor(index/g.w),col=index%g.w,lat=g.north-(row+.5)*g.psy,lon=g.west+(col+.5)*g.psx;
-    push([id,'ncei_multibeam_mosaic',index,'',multibeam.fetchedAt,lat,lon,'multibeam_class',multibeam.classes[k],'category',Math.cos(rad(lat)),'',true,'','rendered_export_pixel',MULTIBEAM_SERVICE]);
   });}
   const depth=s.depth?.audit;
   for(const [i,c] of (depth?.cellRows || []).entries())push([id,'etopo1',i,'',depth.fetchedAt,c.latitude,c.longitude,'elevation',c.elevation_m,'m',c.weight_cos_lat,'',c.used,depth.stride,'source_grid_center',depth.requests[0]]);
@@ -2904,7 +2652,6 @@ function gridOverviewOptions(s) {
   const options=[];
   if(s.climate?.cellRows?.length) for(const [id,label] of [['sst','SST'],['anomaly','Temperature anomaly'],['dhw','Heat stress']]) options.push([id,label]);
   if(s.mapping?.audit?.cellIndices?.length) options.push(['mapping','Mapping coverage']);
-  if(s.multibeam?.audit?.cellIndices?.length) options.push(['multibeam','Multibeam coverage']);
   if(s.depth?.audit?.cellRows?.length) options.push(['depth','Depth (ETOPO fallback)']);
   return options;
 }
@@ -2929,11 +2676,6 @@ function gridOverviewSpec(s,key) {
   } else if(key==='mapping') {
     const a=s.mapping.audit,g=a.grid;
     Object.assign(spec,{title:'Seafloor mapping coverage',cellWidth:g.psx,cellHeight:g.psy,source:'NOAA Bathymetry Gap Analysis',date:'Retrieved '+a.fetchedAt.slice(0,10)+' UTC',
-      note:'Rendered export-grid pixels used for coverage; these are not native sounding cells. All inside pixels enter the denominator.',
-      visit:fn=>a.cellIndices.forEach(i=>fn(g.west+(i%g.w+.5)*g.psx,g.north-(Math.floor(i/g.w)+.5)*g.psy,true))});
-  } else if(key==='multibeam') {
-    const a=s.multibeam.audit,g=a.grid;
-    Object.assign(spec,{title:'Multibeam coverage',cellWidth:g.psx,cellHeight:g.psy,source:'NOAA NCEI multibeam mosaic',date:'Retrieved '+a.fetchedAt.slice(0,10)+' UTC',
       note:'Rendered export-grid pixels used for coverage; these are not native sounding cells. All inside pixels enter the denominator.',
       visit:fn=>a.cellIndices.forEach(i=>fn(g.west+(i%g.w+.5)*g.psx,g.north-(Math.floor(i/g.w)+.5)*g.psy,true))});
   } else {
@@ -3052,33 +2794,45 @@ function refreshHostedReport() { if (activeId && !report.hidden) renderReport(ac
 function removeConnectionLayer(c) {
   // Replacing the runtime entry also invalidates an in-flight response.
   connectionRuntime.set(c.id, { status: "Disconnected" });
-  for (const suffix of ["-fill", "-line", "-point", "-raster"]) if (map.getLayer(c.id + suffix)) map.removeLayer(c.id + suffix);
-  if (map.getSource(c.id)) map.removeSource(c.id);
+  const hosted = hostedLayers.get(c.id);
+  if (hosted) { esriMap.remove(hosted); hosted.destroy(); hostedLayers.delete(c.id); }
+  const blob = hostedBlobs.get(c.id);
+  if (blob) { URL.revokeObjectURL(blob); hostedBlobs.delete(c.id); }
   if (cefiConnection === c.id) { cefi = null; cefiConnection = null; document.getElementById("cefi-status").textContent = "Climate: CEFI model summaries not loaded."; }
 }
-async function hostedGeoJSON(c) {
-  let data;
-  if (c.type === "geojson") data = await fetchJSON(c.url, 30000);
-  else {
-    const info = await fetchJSON(c.url + "?f=json", 20000);
-    const count = await fetchJSON(c.url + "/query?" + new URLSearchParams({ where: "1=1", returnCountOnly: "true", f: "json" }), 20000);
-    if (!Number.isInteger(count.count) || count.count < 0) throw new Error("The feature service did not return a valid feature count.");
-    if (count.count > 10000) throw new Error("This layer has more than 10,000 features. Use an ArcGIS MapServer for a large layer.");
-    const features = [], pageSize = Math.min(1000, info.maxRecordCount || 1000);
-    while (features.length < count.count) {
-      const p = { where: "1=1", outFields: "*", returnGeometry: "true", outSR: "4326", f: "geojson", resultOffset: String(features.length), resultRecordCount: String(pageSize) };
-      if (info.objectIdField) p.orderByFields = info.objectIdField + " ASC";
-      const batch = await fetchJSON(c.url + "/query?" + new URLSearchParams(p), 30000);
-      if (!Array.isArray(batch.features) || !batch.features.length) throw new Error("The service returned an incomplete layer.");
-      features.push(...batch.features);
-      if (features.length < count.count && !info.advancedQueryCapabilities?.supportsPagination) throw new Error("This service cannot page the full layer. Use a map service instead.");
-    }
-    data = { type: "FeatureCollection", features };
+// Hosted layers are ordinary SDK layers, so the service's own popups, symbology,
+// scale ranges and paging come with them. GeoJSON has no symbology of its own, so it
+// is drawn in amber to read as connected context. A GeoJSONLayer holds one geometry
+// type (the first found); use a feature service for mixed geometry.
+const HOSTED_GEOJSON_RENDERERS = {
+  polygon:  { type: "simple", symbol: { type: "simple-fill", color: [216, 132, 34, 0.28], outline: { color: [156, 87, 17, 1], width: 2 } } },
+  polyline: { type: "simple", symbol: { type: "simple-line", color: [156, 87, 17, 1], width: 2 } },
+  point:    { type: "simple", symbol: { type: "simple-marker", style: "circle", size: 8, color: [216, 132, 34, 1], outline: { color: [255, 255, 255, 1], width: 1.5 } } }
+};
+async function createHostedLayer(c) {
+  if (c.type === "geojson") {
+    let data = await fetchJSON(c.url, 30000);
+    if (data && data.type === "Feature") data = { type: "FeatureCollection", features: [data] };
+    if (!data || data.type !== "FeatureCollection" || !Array.isArray(data.features)) throw new Error("The URL did not return a GeoJSON FeatureCollection.");
+    const blobUrl = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: "application/json" }));
+    hostedBlobs.set(c.id, blobUrl);
+    const layer = new GeoJSONLayer({ url: blobUrl, title: c.name, copyright: c.name });
+    await layer.load();
+    if (HOSTED_GEOJSON_RENDERERS[layer.geometryType]) layer.renderer = HOSTED_GEOJSON_RENDERERS[layer.geometryType];
+    return { layer, status: `On map · ${fmt(await layer.queryFeatureCount(), 0)} features` };
   }
-  if (data?.type === "Feature") data = { type: "FeatureCollection", features: [data] };
-  if (data?.type !== "FeatureCollection" || !Array.isArray(data.features)) throw new Error("The URL did not return a GeoJSON FeatureCollection.");
-  if (data.features.length > 10000) throw new Error("Use a map service for more than 10,000 features.");
-  return data;
+  if (c.type === "arcgis") {
+    const layer = new FeatureLayer({ url: c.url, title: c.name, copyright: c.name });
+    await layer.load();
+    return { layer, status: `On map · ${fmt(await layer.queryFeatureCount(), 0)} features` };
+  }
+  let layer;
+  if (c.type === "mapserver") layer = new MapImageLayer({ url: c.url, title: c.name, opacity: .75, copyright: c.name });
+  else if (c.type === "imageserver") layer = new ImageryLayer({ url: c.url, title: c.name, opacity: .75, copyright: c.name });
+  else if (c.type === "xyz") layer = new WebTileLayer({ urlTemplate: c.url, title: c.name, opacity: .75, copyright: c.name });
+  else throw new Error("Unsupported connection type.");
+  if (c.type !== "xyz") await layer.load();
+  return { layer, status: "Added to map · waiting for visible tiles" };
 }
 async function activateConnection(c) {
   if (!c.enabled) return;
@@ -3090,48 +2844,27 @@ async function activateConnection(c) {
   const r = { status: "Connecting…", error: false }; connectionRuntime.set(c.id, r); drawConnections();
   const current = () => connectionRuntime.get(c.id) === r && connections.includes(c) && c.enabled;
   try {
-    let geo, source;
     if (c.type === "cefi") {
       const data = await fetchJSON(c.url, 30000); validateCefi(data);
       if (!current()) return;
       cefiConnection = c.id; setCefi(data, c.name); r.status = "Connected to reports";
     } else {
-      if (["geojson", "arcgis"].includes(c.type)) geo = await hostedGeoJSON(c);
-      else if (c.type === "xyz") source = { type: "raster", tileSize: 256, tiles: [c.url] };
-      else {
-        await fetchJSON(c.url + "?f=json", 20000);
-        source = esriExport(c.url, { kind: c.type === "imageserver" ? "image" : "map", attribution: esc(c.name) });
-      }
-      if (!map.getSource(BD_SOURCE)) await new Promise((resolve, reject) => {
-        const t = setTimeout(() => { map.off("style.load", ready); reject(new Error("The map is still loading. Try Retry.")); }, 15000);
-        function ready() { clearTimeout(t); resolve(); } map.once("style.load", ready);
-      });
-      if (!current()) return;
-      const before = map.getLayer("bd-fill") ? "bd-fill" : undefined;
-      map.addSource(c.id, geo ? { type: "geojson", data: geo } : source);
-      if (geo) {
-        map.addLayer({ id: c.id + "-fill", type: "fill", source: c.id, filter: ["==", ["geometry-type"], "Polygon"], paint: { "fill-color": "#D88422", "fill-opacity": .28 } }, before);
-        map.addLayer({ id: c.id + "-line", type: "line", source: c.id, filter: ["!=", ["geometry-type"], "Point"], paint: { "line-color": "#9C5711", "line-width": 2 } }, before);
-        map.addLayer({ id: c.id + "-point", type: "circle", source: c.id, filter: ["==", ["geometry-type"], "Point"], paint: { "circle-color": "#D88422", "circle-radius": 5, "circle-stroke-color": "#fff", "circle-stroke-width": 1.5 } }, before);
-        r.status = `On map · ${fmt(geo.features.length, 0)} features`;
-      } else {
-        map.addLayer({ id: c.id + "-raster", type: "raster", source: c.id, paint: { "raster-opacity": .75 } }, before);
-        r.status = "Added to map · waiting for visible tiles";
+      await viewReady;
+      const made = await createHostedLayer(c);
+      if (!current()) { made.layer.destroy(); return; }
+      hostedLayers.set(c.id, made.layer);
+      insertBelowBoundaries(made.layer);
+      r.status = made.status;
+      if (!["geojson", "arcgis"].includes(c.type)) {
+        viewEl.whenLayerView(made.layer)
+          .then(lv => reactiveUtils.whenOnce(() => !lv.updating))
+          .then(() => { if (current() && !r.error) { r.status = "On map · tiles loaded"; drawConnections(); } })
+          .catch(() => { if (current() && !r.error) { r.error = true; r.status = "Map data could not load. Check the service URL, tile format, zoom range and CORS settings."; drawConnections(); } });
       }
     }
   } catch (e) { if (current()) { r.error = true; r.status = "Couldn't connect: " + (e.name === "AbortError" ? "service timed out" : e.message) + ". Check the URL and host's browser-access (CORS) settings."; } }
   if (current()) { drawConnections(); refreshHostedReport(); }
 }
-map.on("sourcedata", e => {
-  const c = connections.find(c => c.id === e.sourceId && c.enabled);
-  const r = c && connectionRuntime.get(c.id);
-  if (r && e.tile && !r.error && !["geojson", "arcgis", "cefi"].includes(c.type) && r.status !== "On map · tiles loaded") { r.status = "On map · tiles loaded"; drawConnections(); }
-});
-map.on("error", e => {
-  const c = connections.find(c => c.id === e.sourceId && c.enabled);
-  const r = c && connectionRuntime.get(c.id);
-  if (r && !r.error) { r.error = true; r.status = "Map data could not load. Check the service URL, tile format, zoom range and CORS settings."; drawConnections(); }
-});
 function hostedReportBlock() {
   if (!connections.length) return "";
   return `<section class="r-section" data-report-section="hosted"><h3>Hosted data connections</h3><p class="lede">Connected map layers provide context. They are not clipped or counted in this report. Connected CEFI summaries supply the modeled climate sections.</p><table class="sources"><thead><tr><th>Connection</th><th>Status</th></tr></thead><tbody>${connections.map(c => `<tr><td>${esc(c.name)}<div class="src">${esc(c.url)}</div></td><td>${esc(connectionRuntime.get(c.id)?.status || "Ready to connect")}</td></tr>`).join("")}</tbody></table></section>`;
@@ -3204,6 +2937,7 @@ drawConnections();
 connections.filter(c => c.enabled).forEach(activateConnection);
 
 
+uiReady = true;
 const initial = location.hash.slice(1);
 loadBoundaries().then(() => { if (initial && state[initial] && !activeId) selectSite(initial); });
 </script>
